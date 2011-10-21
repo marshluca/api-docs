@@ -1,5 +1,4 @@
 Wiki::Application.routes.draw do
-  #get \"users\/show\"
 
   root :to => "home#index"
 
