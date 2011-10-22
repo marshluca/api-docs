@@ -36,6 +36,7 @@ Gemfile.lock
 /doc/features.html
 /doc/specs.html
 /public/cache
+/public/assets
 /public/stylesheets/compiled
 /public/system
 /spec/tmp/*

@@ -12,11 +12,11 @@ gem "devise", ">= 1.4.7"
 gem "haml", ">= 3.1.2"
 gem "frontend-helpers"
 
-# group :assets do
-#   gem 'sass-rails',   '~> 3.1.4'
-#   gem 'coffee-rails', '~> 3.1.1'
-#   gem 'uglifier', '>= 1.0.3'
-# end
+group :assets do
+  # gem 'sass-rails',   '~> 3.1.4'
+  # gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
+end
 
 if HOST_OS =~ /linux/i
   gem 'therubyracer', '>= 0.8.2'
