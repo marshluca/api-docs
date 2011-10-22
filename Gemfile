@@ -58,3 +58,8 @@ group :test do
   gem "capybara", ">= 1.1.1"
   gem "launchy", ">= 2.0.5"
 end
+
+group :production do
+  gem "memcached", "~> 1.3.5"
+  gem "memcache-client", "~> 1.8.5"
+end
