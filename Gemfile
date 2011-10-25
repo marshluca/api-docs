@@ -15,7 +15,7 @@ gem "frontend-helpers"
 group :assets do
   # gem 'sass-rails',   '~> 3.1.4'
   # gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  # gem 'uglifier', '>= 1.0.3'
 end
 
 if HOST_OS =~ /linux/i
@@ -48,6 +48,7 @@ group :development do
   gem "guard-rspec", ">= 0.4.3"
   gem "guard-cucumber", ">= 0.6.1"
   gem "rails-footnotes", ">= 3.7"
+  gem 'bootstrap-generators'
 end
 
 group :test do
