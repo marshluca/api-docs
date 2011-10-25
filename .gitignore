@@ -27,6 +27,7 @@ Gemfile.lock
 .sass-cache
 /config/config.yml
 /config/database.yml
+/config/mongoid.yml
 /coverage.data
 /coverage/
 /db/*.javadb/
