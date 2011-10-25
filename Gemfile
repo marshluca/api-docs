@@ -48,7 +48,7 @@ group :development do
   gem "guard-rspec", ">= 0.4.3"
   gem "guard-cucumber", ">= 0.6.1"
   gem "rails-footnotes", ">= 3.7"
-  gem 'bootstrap-generators'
+  # gem 'bootstrap-generators'
 end
 
 group :test do
