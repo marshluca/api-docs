@@ -3,6 +3,6 @@ class Project
 
   field :name, :type => String
   field :desc, :type => String
-  filed :versions, :type => Array
+  field :versions, :type => Array
 
 end

@@ -22,10 +22,6 @@ if HOST_OS =~ /linux/i
   gem 'therubyracer', '>= 0.8.2'
 end
 
-group :development, :test do
-  gem "rspec-rails", ">= 2.6.1"
-end
-
 group :development do
   case HOST_OS
   when /darwin/i
@@ -51,6 +47,7 @@ group :development do
   # gem 'bootstrap-generators'
 end
 
+gem "rspec-rails", ">= 2.6.1", :group => [:test, :development]
 group :test do
   gem "database_cleaner", ">= 0.6.7"
   gem "mongoid-rspec", ">= 1.4.4"
