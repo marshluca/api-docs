@@ -14,7 +14,8 @@ class Doc
   field :http_method # HTTP请求类型
   field :sample      # 返回示例, 嵌入gist
   field :annotation  # 返回字段说明
-  field :deprecated   # 是否弃用
+  field :history     # 修改历史
+  field :deprecated  # 是否弃用
   field :updated_at  # 更新时间
   field :created_at  # 创建时间
 
