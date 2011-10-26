@@ -7,4 +7,5 @@ class UserLog
   field :user
   field :action
   field :created_at
+
 end
