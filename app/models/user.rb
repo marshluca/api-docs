@@ -1,5 +1,6 @@
 class User
   include Mongoid::Document
+  include Mongoid::Paranoia
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -8,10 +9,13 @@ class User
 
   field :name, :type => String
   field :ability, :type => Integer, :default => 0 # 见 app/models/ability.rb
-  field :project_ids, :type => Array # 可以查阅的项目
+  field :projects, :type => Array # 可以查阅的项目, 存储token
 
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+
+  has_many :projects
+  has_many :docs
 end
 
