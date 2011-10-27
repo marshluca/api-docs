@@ -17,16 +17,16 @@
       .topbar-inner
         .container-fluid
           %a.brand{:href => "/"} API Wiki
-          -# %ul.nav
-          -#   %li.active
-          -#     %a{:href => "#"} Home
-          -#   %li
-          -#     %a{:href => "#about"} About
-          -#   %li
-          -#     %a{:href => "#contact"} Contact
+          %ul.nav
+            %li.active
+              %a{:href => "#"} Home
+            %li
+              %a{:href => "#about"} About
+            %li
+              %a{:href => "#contact"} Contact
           %p.pull-right
-            %ul.hmenu
-              = render 'shared/navigation'
+            %span Login as #{link_to current_user.name, current_user},
+            %span= link_to('Logout', destroy_user_session_path, :method=>'delete')
     .container-fluid
       .sidebar
         .well
