@@ -25,8 +25,9 @@
             %li
               %a{:href => "#contact"} Contact
           %p.pull-right
-            %span Login as #{link_to current_user.name, current_user},
-            %span= link_to('Logout', destroy_user_session_path, :method=>'delete')
+            %span= link_to(current_user.name, edit_user_registration_path)
+            |
+            %span= link_to('Logout', destroy_user_session_path, :confirm => "Are you sure to logout?",  :method=>'delete')
     .container-fluid
       .sidebar
         .well
