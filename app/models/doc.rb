@@ -6,7 +6,7 @@ class Doc
   cache
 
   field :name, :type => String                  # 名称
-  field :path, :type => String                  # 调用path
+  field :path, :type => String                  # 调用path ('-'分割)
   field :url, :type => String                   # 请求url
   field :desc, :type => String                  # 接口描述
   field :format, :type => Array                 # 支持格式 [json|xml]
@@ -17,17 +17,17 @@ class Doc
   field :history, :type => Hash                 # 修改历史
   field :deprecated, :type => Boolean           # 是否弃用
   field :auth, :type => Integer, :default => 0  # 访问权限
-
-  key :path
-  index :name, unique: true, background: true
-  index :path, unique: true, background: true
-
-  validates_presence_of :name, :version, :path, :category
-  validates_uniqueness_of :name, :path
+  key :path                                     # 标记id
 
   belongs_to :project
   belongs_to :version
   belongs_to :category
   belongs_to :user
 
+  validates_presence_of :name, :version, :path, :category
+  validates_uniqueness_of :name, :path
+
+  def title
+    path.gsub('-', '/')
+  end
 end
