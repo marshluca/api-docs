@@ -11,6 +11,7 @@ gem "bson_ext", ">= 1.4.0"
 gem "mongoid", ">= 2.3.0"
 gem "devise", ">= 1.4.7"
 gem "haml", ">= 3.1.2"
+gem "has_scope", "~> 0.5.1"
 gem "inherited_resources", "~> 1.3.0"
 
 group :assets do
