@@ -6,7 +6,9 @@ class Project
   field :name, :type => String
   field :token, :type => String
   field :desc, :type => String
-  field :versions, :type => Array
+
+  embeds_many :versions
+  embeds_many :categories
 
   key :token
   index :name, unique: true, background: true
