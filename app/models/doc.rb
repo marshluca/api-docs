@@ -20,11 +20,11 @@ class Doc
   key :path                                     # 标记id
 
   belongs_to :project
-  belongs_to :version
+  belongs_to :edition
   belongs_to :category
   belongs_to :user
 
-  validates_presence_of :name, :version, :path, :category
+  validates_presence_of :name, :edition, :path, :category
   validates_uniqueness_of :name, :path
 
   def title
