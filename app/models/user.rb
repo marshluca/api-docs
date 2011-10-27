@@ -7,7 +7,8 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   field :name, :type => String
-  field :ability, :type => Integer, :default => 0
+  field :ability, :type => Integer, :default => 0 # 见 app/models/ability.rb
+  field :project_ids, :type => Array # 可以查阅的项目
 
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false

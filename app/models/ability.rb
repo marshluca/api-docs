@@ -7,7 +7,7 @@ class Ability
     when 0
       can :read, :all
     when 1
-      can :mannage, Doc, :deprecated => false
+      can [:read, :create, :update], [Doc, Page]
     when 2
       can :manage, :all
     end
