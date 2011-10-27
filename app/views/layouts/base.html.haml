@@ -61,11 +61,9 @@
             %li
               %a{:href => "#"} Link
       - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
-      -# - flash.each do |name, msg|
-      -#   = content_tag :div, :class => "container alert-message #{name == :error ? "error" : "success" }", :"data-alert" => "alert" do
-      -#     %a.close{:href => "#"} ×
-      -#     %p= msg
+        = content_tag :div, :class => "container alert-message #{name == :error ? "error" : "success" }", :"data-alert" => "alert" do
+          %a.close{:href => "#"} ×
+          %p= msg
       .content
         .row
           .span16
