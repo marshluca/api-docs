@@ -6,14 +6,8 @@ Wiki::Application.routes.draw do
   resources :users, :only => [:index, :show]
 
   resources :projects do
-    resources :docs, :only => [:index, :show]
-    resources :pages, :only => [:index, :show]
-  end
-
-  namespace :admin do
-    resources :projects do
-      resources :docs, :pages
-    end
+    resources :docs
+    resources :pages
   end
 
 
