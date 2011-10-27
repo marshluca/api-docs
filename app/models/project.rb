@@ -1,7 +1,6 @@
 class Project
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::Paranoia
 
   field :name             # 项目名
   field :cname            # 项目中文名

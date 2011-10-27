@@ -1,7 +1,6 @@
 class Doc
   include Mongoid::Document
   include Mongoid::Timestamps
-  include Mongoid::Paranoia
 
   cache
 
