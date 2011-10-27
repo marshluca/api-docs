@@ -6,7 +6,8 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  field :name
+  field :name, :type => String
+  field :ability, :type => Integer, :default => 0
 
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
