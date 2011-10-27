@@ -1,6 +1,4 @@
 class DocsController < BaseController
-  before_filter :authenticate_user!
-
   def index
     @docs = Doc.all
   end
