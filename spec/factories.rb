@@ -6,3 +6,7 @@ Factory.define :user do |u|
   u.password 'please'
 end
 
+Factory.define :doc do |d|
+  d.name 'Test API'
+  d.desc 'a test api'
+end
