@@ -10,6 +10,12 @@ Wiki::Application.routes.draw do
     resources :pages, :only => [:index, :show]
   end
 
+  namespace :admin do
+    resources :projects do
+      resources :docs, :pages
+    end
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
