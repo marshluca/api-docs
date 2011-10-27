@@ -10,7 +10,7 @@ class Project
   key :name               # 标记id
 
   embedded_in :user       # 项目创建者
-  embeds_many :editions   # 项目包含版本
+  embeds_many :versions   # 项目包含版本
   embeds_many :categories # 项目包含分类
 
   has_many :docs
