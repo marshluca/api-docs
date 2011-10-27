@@ -9,13 +9,13 @@ class User
 
   field :name, :type => String
   field :ability, :type => Integer, :default => 0 # 见 app/models/ability.rb
-  field :projects, :type => Array # 可以查阅的项目, 存储token
+
+  embeds_many :projects # 用户可以查阅的项目
 
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
-  has_many :projects
   has_many :docs
 end
 

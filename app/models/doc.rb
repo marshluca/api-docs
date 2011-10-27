@@ -8,7 +8,6 @@ class Doc
   field :name, :type => String                  # 名称
   field :path, :type => String                  # 调用path
   field :url, :type => String                   # 请求url
-  field :category, :type => String              # 分类
   field :desc, :type => String                  # 接口描述
   field :format, :type => Array                 # 支持格式 [json|xml]
   field :parameters, :type => Array             # 请求参数
@@ -28,6 +27,7 @@ class Doc
 
   belongs_to :project
   belongs_to :version
+  belongs_to :category
   belongs_to :user
 
 end
