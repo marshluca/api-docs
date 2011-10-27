@@ -6,11 +6,12 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 gem 'json'
 gem 'jquery-rails'
+gem "frontend-helpers"
 gem "bson_ext", ">= 1.4.0"
 gem "mongoid", ">= 2.3.0"
 gem "devise", ">= 1.4.7"
 gem "haml", ">= 3.1.2"
-gem "frontend-helpers"
+gem "inherited_resources", "~> 1.3.0"
 
 group :assets do
   # gem 'sass-rails',   '~> 3.1.4'
