@@ -6,12 +6,20 @@ describe DocsController do
     sign_in @user
 
     @doc = Factory(:doc)
+    @project = Factory(:project)
+  end
+
+  describe "GET 'index'" do
+    it "returns http success" do
+      get "index", :project_id => @project.id
+      response.should be_success
+    end
   end
 
   describe "GET 'show'" do
-    it "should find the right doc" do
-      get :show, :id => @doc.id
-      assigns(:doc).should == @doc
+    it "should find the right project" do
+      get 'show', :project_id => @project.id, :id => @doc.id
+      response.should be_success
     end
   end
 end
