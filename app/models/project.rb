@@ -13,5 +13,5 @@ class Project
   embeds_many :categories        # 项目分类
   references_many :docs          # 项目关联的docs
 
-  validates_presence_of :name, :cname, :version, :author
+  validates_presence_of :name, :cname, :version
 end
