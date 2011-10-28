@@ -9,5 +9,5 @@ class UserLog
 
   referenced_in :doc            # 关联doc
 
-  validates_presence_of :name :author
+  validates_presence_of :name, :author
 end
