@@ -14,5 +14,4 @@ class Project
   references_many :docs          # 项目关联的docs
 
   validates_presence_of :name, :cname, :version, :author
-
 end

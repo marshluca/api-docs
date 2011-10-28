@@ -7,7 +7,7 @@ class UserLog
   field :author, :type => Hash  # 操作用户 {id, name, email}
   field :log, :type => Hash     # 操作日志 { :insert => '', :update => {}, :destroy => ''}
 
-  embeds_one :action            # 具体操作
   referenced_in :doc            # 关联doc
 
+  validates_presence_of :name :author
 end
