@@ -1,3 +1,3 @@
-class PagesController < ApplicationController
+class PagesController < BaseController
   actions :index, :show
 end
