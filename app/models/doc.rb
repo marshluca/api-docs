@@ -23,7 +23,7 @@ class Doc
   referenced_in :project                        # 关联项目
   references_many :user_logs                    # 关联日志
 
-  validates_presence_of :name, :author, :path
+  validates_presence_of :name, :path
   validates_uniqueness_of :path
 
   def title
