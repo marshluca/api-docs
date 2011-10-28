@@ -9,10 +9,9 @@ class User
 
   field :name
   field :gravatar_url
+  field :project_ids, :type => Array              # 可以查看的项目
   field :ability, :type => Integer, :default => 0 # 见 app/models/ability.rb
   key :name
-
-  references_many :projects # 用户可以查阅的项目
 
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
