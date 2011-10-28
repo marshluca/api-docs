@@ -8,10 +8,10 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   field :name
-  field :gravatar_url
-  field :project_ids, :type => Array              # 可以查看的项目
-  field :ability, :type => Integer, :default => 0 # 见 app/models/ability.rb
-  key :name
+  field :gravatar_url                                # gavatar url
+  field :project_ids, :type => Array, :default => [] # 可以查看的项目
+  field :ability, :type => Integer, :default => 0    # 见 app/models/ability.rb
+  key :name                                          # 标记id
 
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false

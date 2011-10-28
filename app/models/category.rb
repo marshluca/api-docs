@@ -3,7 +3,7 @@ class Category
   field :name
   field :desc
 
-  embedded_in :project
+  embedded_in :project, :inverse_of => :categories
 
   validates_presence_of :name
 end
