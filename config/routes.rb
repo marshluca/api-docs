@@ -7,7 +7,6 @@ Wiki::Application.routes.draw do
 
   resources :projects do
     resources :docs
-    # resources :pages
   end
 
 

@@ -6,14 +6,13 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 gem 'json'
 gem 'jquery-rails'
-gem "frontend-helpers"
 
 gem "bson_ext", ">= 1.4.0"
 gem "mongoid", ">= 2.3.0"
-gem "mongoid_auto_inc", "~> 0.0.4"
 gem "mongoid-eager-loading", "~> 0.3.1"
 gem "mongo-rails-instrumentation", "~> 0.2.4"
 
+gem "frontend-helpers"
 gem "devise", ">= 1.4.7"
 gem "cancan", "~> 1.6.7"
 gem "haml", ">= 3.1.2"
