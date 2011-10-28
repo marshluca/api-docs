@@ -6,13 +6,12 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  field :name, :type => String
+  field :name
+  field :gravatar_url
   field :ability, :type => Integer, :default => 0 # 见 app/models/ability.rb
   key :name
 
-  embeds_many :projects # 用户可以查阅的项目
-
-  has_many :docs
+  references_many :projects # 用户可以查阅的项目
 
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false

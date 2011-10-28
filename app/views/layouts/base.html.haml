@@ -16,14 +16,14 @@
     .topbar
       .topbar-inner
         .container-fluid
-          %a.brand{:href => "/"} API Wiki
+          %a.brand{:href => "/"} 易分享
           %ul.nav
             %li.active
-              %a{:href => "#"} Home
+              %a{:href => "#"} V1
             %li
-              %a{:href => "#about"} About
+              %a{:href => "#about"} V2
             %li
-              %a{:href => "#contact"} Contact
+              %a{:href => "#contact"} V3
           %p.pull-right
             %span= link_to(current_user.name, edit_user_registration_path)
             |
@@ -31,36 +31,32 @@
     .container-fluid
       .sidebar
         .well
-          %h5 Sidebar
+          %h5 资源
           %ul
             %li
-              %a{:href => "#"} Link
+              %a{:href => "#"} 壁纸
             %li
-              %a{:href => "#"} Link
+              %a{:href => "#"} 铃声
             %li
-              %a{:href => "#"} Link
+              %a{:href => "#"} 笑话
             %li
-              %a{:href => "#"} Link
-          %h5 Sidebar
+              %a{:href => "#"} 短信
+          %h5 达人
           %ul
             %li
-              %a{:href => "#"} Link
+              %a{:href => "#"} 关注
             %li
-              %a{:href => "#"} Link
+              %a{:href => "#"} 粉丝
             %li
-              %a{:href => "#"} Link
-            %li
-              %a{:href => "#"} Link
-            %li
-              %a{:href => "#"} Link
-            %li
-              %a{:href => "#"} Link
-          %h5 Sidebar
+              %a{:href => "#"} 私信
+          %h5 动态
           %ul
             %li
-              %a{:href => "#"} Link
+              %a{:href => "#"} 全部
             %li
-              %a{:href => "#"} Link
+              %a{:href => "#"} 好友
+            %li
+              %a{:href => "#"} 自己
       - flash.each do |name, msg|
         = content_tag :div, :class => "container alert-message #{name == :error ? "error" : "success" }", :"data-alert" => "alert" do
           %a.close{:href => "#"} ×

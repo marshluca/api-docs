@@ -2,19 +2,17 @@ class Project
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :name             # 项目名
-  field :cname            # 项目中文名
-  field :desc             # 项目描述
-  field :icon_url         # 项目icon
-  key :name               # 标记id
+  field :name                    # 项目名
+  field :cname                   # 项目中文名
+  field :desc                    # 项目描述
+  field :version                 # 项目版本
+  field :icon_url                # 项目icon
+  field :author, :type => Hash   # 项目创建者 {id, name ,email}
+  key :name, :version            # 标记id
 
-  embedded_in :user       # 项目创建者
-  embeds_many :versions   # 项目包含版本
-  embeds_many :categories # 项目包含分类
+  embeds_many :categories        # 项目分类
+  references_many :docs          # 项目关联的docs
 
-  has_many :docs
-
-  validates_presence_of :name, :cname
-  validates_uniqueness_of :name, :cname
+  validates_presence_of :name, :cname, :version, :author
 
 end

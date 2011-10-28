@@ -2,11 +2,9 @@ class UserLog
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :action, :type => Hash
+  field :author, type: Hash  # 操作用户 {id, name, email}
 
-  belongs_to :project
-  belongs_to :version
-  belongs_to :doc
-  belongs_to :user
+  embeds_one :action         # 具体操作
+  referenced_in :doc         # 关联doc
 
 end
