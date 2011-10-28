@@ -1,3 +1,3 @@
 class ProjectsController < BaseController
-  actions :index, :show
+  actions :index, :show, :new, :edit
 end

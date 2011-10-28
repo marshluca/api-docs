@@ -1,3 +1,3 @@
 class PagesController < BaseController
-  actions :index, :show
+  # actions :index, :show, :new, :edit
 end

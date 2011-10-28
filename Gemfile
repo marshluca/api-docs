@@ -13,6 +13,7 @@ gem "mongoid-eager-loading", "~> 0.3.1"
 gem "mongo-rails-instrumentation", "~> 0.2.4"
 
 gem "frontend-helpers"
+gem "simple_form", "~> 1.5.2"
 gem "devise", ">= 1.4.7"
 gem "cancan", "~> 1.6.7"
 gem "haml", ">= 3.1.2"
