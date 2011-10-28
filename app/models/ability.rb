@@ -4,11 +4,11 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user (not logged in)
     case user.ability
-    when 0
+    when 0 # vsitor
       can :read, :all
-    when 1
+    when 1 # admin
       can [:read, :create, :update], [Doc, Page]
-    when 2
+    when 2 # master
       can :manage, :all
     end
 
