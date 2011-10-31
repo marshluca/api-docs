@@ -1,3 +1,7 @@
-= semantic_form_for @project do |f|
-  = f.inputs :name, :cname, :version, :desc, :icon_url
-  = f.buttons :commit
+= simple_form_for(@project) do |f|
+  = f.error_notification
+
+  .inputs
+
+  .actions
+    = f.button :submit
