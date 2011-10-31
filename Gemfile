@@ -14,6 +14,7 @@ gem "mongo-rails-instrumentation", "~> 0.2.4"
 
 gem "frontend-helpers"
 gem "devise", ">= 1.4.7"
+gem "devise_invitable", "~> 0.5.6"
 gem "cancan", "~> 1.6.7"
 gem "haml", ">= 3.1.2"
 gem "cells", "~> 3.7.0"
