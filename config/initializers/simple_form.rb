@@ -1,4 +1,3 @@
-__END__
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
   # Components used by the form builder to generate a complete input. You can remove
