@@ -6,7 +6,6 @@ class Doc
 
   field :name, :type => String                  # 名称
   field :category, :type => String              # 分类
-  field :author, :type => Hash                  # 创建作者 {id, name ,email}
   field :path, :type => String                  # 调用path ('-'分割)
   field :url, :type => String                   # 请求url
   field :desc, :type => String                  # 接口描述
@@ -20,6 +19,7 @@ class Doc
   field :kind, :type => Integer, :default => 0  # 类型 [doc]
   key :path                                     # 标记id
 
+  embeds_one :author                            # 创建作者
   referenced_in :project                        # 关联项目
   references_many :user_logs                    # 关联日志
 

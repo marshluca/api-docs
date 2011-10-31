@@ -3,11 +3,11 @@ class UserLog
   include Mongoid::Timestamps
 
   field :name                   # 操作名称 (insert, update, destroy ...)
-  field :desc                   # 操作描述
-  field :author, :type => Hash  # 操作用户 {id, name, email}
-  field :log, :type => Hash     # 操作日志 { :insert => '', :update => {}, :destroy => ''}
+  field :desc                   # 操作描述 (插入, 修改, 删除)
+  field :log                    # 操作日志 (具体修改内容)
 
+  embeds_one :author            # 操作用户
   referenced_in :doc            # 关联doc
 
-  validates_presence_of :name, :author
+  validates_presence_of :name
 end

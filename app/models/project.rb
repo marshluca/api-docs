@@ -7,11 +7,12 @@ class Project
   field :desc                    # 项目描述
   field :version                 # 项目版本
   field :icon_url                # 项目icon
-  field :author, :type => Hash   # 项目创建者 {id, name ,email}
   key :name, :version            # 标记id
 
+  embeds_one :author             # 项目创建者
   embeds_many :categories        # 项目分类
   references_many :docs          # 项目关联的docs
+  accepts_nested_attributes_for
 
   validates_presence_of :name, :cname, :version
 end
