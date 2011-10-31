@@ -1,5 +1,10 @@
 %p#notice= notice
 
+%p= @project.cname
+
+%p= @project.version
+
+%p= @project.desc
 
 = link_to 'Edit', edit_project_path(@project)
 \|
