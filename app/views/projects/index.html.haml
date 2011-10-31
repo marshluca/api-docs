@@ -2,15 +2,18 @@
 
 %table
   %tr
-    %th
-    %th
-    %th
+    %th 名称
+    %th 版本
+    %th 描述
 
   - @projects.each do |project|
     %tr
-      %td= link_to 'Show', project
-      %td= link_to 'Edit', edit_project_path(project)
-      %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
+      %td= project.cname
+      %td= project.version
+      %td= project.desc
+      / %td= link_to 'Show', project
+      / %td= link_to 'Edit', edit_project_path(project)
+      / %td= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete
 
 %br
 
