@@ -2,7 +2,9 @@ class DocsController < BaseController
   before_filter :find_project
 
   inherit_resources
-  actions :index, :show
+  actions :all
+
+  belongs_to :project
 
   private
     def find_project
