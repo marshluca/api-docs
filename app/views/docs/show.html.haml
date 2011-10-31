@@ -1,2 +1,9 @@
-%h3 Doc
-%p #{@doc.name}
+%h3= @doc.name
+%p= @doc.desc
+%br/
+%p URL: #{@doc.url}
+%p Category: #{@doc.category}
+%p HTTP Method: #{@doc.http_method}
+%p Author: #{@doc.author['name']}
+%p Authenticated: #{@doc.authenticated}
+%p Sample #{@doc.gist_url}
