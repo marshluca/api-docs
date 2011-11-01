@@ -16,12 +16,12 @@
     .topbar
       .topbar-inner
         .container-fluid
-          %a.brand{:href => "/"} 易分享
+          %a.brand{:href => "/"} 易分享#{@project.version.capitalize}
           %ul.nav
             %li.active
-              %a{:href => "/projects/share-v1"} V1
+              = link_to 'API文档', project_docs_path(@project)
             %li
-              %a{:href => "/projects/share-v2"} V2
+              = link_to '关于'
           %p.pull-right
             %span= link_to(current_user.name, edit_user_registration_path)
             |
@@ -29,16 +29,11 @@
     .container-fluid
       .sidebar
         .well
-          %h5 资源
+          %h5 分类
           %ul
-            %li
-              %a{:href => "#"} 壁纸
-            %li
-              %a{:href => "#"} 铃声
-            %li
-              %a{:href => "#"} 笑话
-            %li
-              %a{:href => "#"} 短信
+            - @project.categories.each do |c|
+              %li
+                %a{:href => "#"} #{c.name}
           %h5 达人
           %ul
             %li

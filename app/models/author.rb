@@ -3,9 +3,10 @@ class Author
 
   field :name
   field :email
-  key :name
 
   embedded_in :project
   embedded_in :doc
   embedded_in :user_log
+
+  validates_presence_of :name, :email
 end

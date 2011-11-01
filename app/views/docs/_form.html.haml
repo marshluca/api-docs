@@ -1,9 +1,8 @@
 = simple_form_for(@doc) do |f|
   = f.error_notification
-
   / .inputs
   = f.input :name
-  = f.input :category
+  / = f.input :category
   = f.input :path
   = f.input :desc
   = f.input :url
@@ -14,4 +13,5 @@
   = f.input :annotation
   = f.input :authenticated
 
+  / .actions
   = f.button :submit

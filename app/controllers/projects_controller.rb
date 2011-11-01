@@ -3,11 +3,8 @@ class ProjectsController < BaseController
   actions :all
 
   def create
-    params[:project].merge!(:author => {
-      :id    => current_user.id,
-      :name  => current_user.name,
-      :email => current_user.email
-    })
+    @project = Project.new(params[:project])
+    @project.author = Author.new(:name => current_user.name, :email => current_user.email)
     create!
   end
 end

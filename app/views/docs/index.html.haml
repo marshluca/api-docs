@@ -1,3 +1,4 @@
-%h3 Docs
+%h3 Docs List
+%ul
 - @docs.each do |doc|
-  %p= link_to doc.name, project_doc_path(@project, doc)
+  %li= link_to doc.name, project_doc_path(@project, doc)
