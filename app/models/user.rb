@@ -17,6 +17,9 @@ class User
   field :ability, :type => Integer, :default => 0    # 见 app/models/ability.rb
   key :name                                          # 标记id
 
+  index [[:name, Mongo::ASCENDING]], :background => true
+  index [[:email, Mongo::ASCENDING]], :background => true
+
   validates_presence_of :name
   validates_uniqueness_of :name, :email, :case_sensitive => false
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me

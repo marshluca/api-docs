@@ -16,13 +16,13 @@ class Doc
   field :kind, :type => Integer, :default => 0     # 类型 [doc]
   field :parameters, :type => Hash, :default => {} # 请求参数
 
-  # index :name
-
   embeds_one :author                               # 创建作者
   embeds_one :category                             # 分类
-  referenced_in :project                           # 关联项目
   references_many :user_logs                       # 关联日志
+  referenced_in :project, :index => true           # 关联项目
 
-  validates_presence_of :name
-  validates_uniqueness_of :name
+  index [[:name, Mongo::ASCENDING]], :background => true
+  index 'category.name'
+
+  validates :name, :presence => true, :uniqueness => true
 end

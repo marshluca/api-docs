@@ -8,13 +8,11 @@ class Project
   field :version                 # 项目版本
   field :icon_url                # 项目icon
 
-  # index :name
-  # index :version
-
   embeds_one :author             # 项目创建者
   embeds_many :categories        # 项目分类
   references_many :docs          # 项目关联的docs
-  # accepts_nested_attributes_for
+
+  index [[:name, Mongo::ASCENDING], [:version, Mongo::ASCENDING]], :background => true
 
   validates_presence_of :name, :cname, :version
 end
