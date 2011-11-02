@@ -1,6 +1,4 @@
-%h2 Listing Docs
-
-%h1= link_to 'New Doc', new_admin_doc_path
+%h1 Listing Docs
 
 %table.grid
   %tr.head
@@ -26,4 +24,6 @@
 
 %br
 
-%p= paginate @docs
+%p=# paginate @docs
+
+%h1= link_to 'New Doc', new_admin_doc_path
