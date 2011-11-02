@@ -13,11 +13,11 @@ class Doc
   field :annotation                                          # 返回字段说明
   field :format, :type => Array, :default => []              # 支持格式 [json|xml]
   field :kind, :type => Integer, :default => 0               # 类型 [doc]
-  field :parameters, :type => Hash, :default => {}           # 请求参数
   field :deprecated, :type => Boolean, :default => false     # 是否弃用
   field :authenticated, :type => Boolean, :default => false  # 是否需要登录认证 (默认不需要)
 
   embeds_one :author                                         # 创建作者
+  embeds_many :parameters                                    # 请求参数
   references_many :user_logs                                 # 关联日志
   referenced_in :project, :index => true                     # 关联项目
 
