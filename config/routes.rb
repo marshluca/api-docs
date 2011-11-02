@@ -9,6 +9,14 @@ Wiki::Application.routes.draw do
     resources :docs
   end
 
+  namespace :admin do
+    root :to => "home#index"
+
+    resources :users
+    resources :projects
+    resources :docs
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

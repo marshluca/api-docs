@@ -1,0 +1,17 @@
+%h1 Listing admin_docs
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @admin_docs.each do |admin_doc|
+    %tr
+      %td= link_to 'Show', admin_doc
+      %td= link_to 'Edit', edit_admin_doc_path(admin_doc)
+      %td= link_to 'Destroy', admin_doc, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Doc', new_admin_doc_path
