@@ -28,4 +28,8 @@ class User
   def role
     ROLES[ability]
   end
+
+  def admin?
+    ability > 0
+  end
 end
