@@ -3,7 +3,14 @@
  *= require_self
  */
 
-body { color: #333; }
+html {
+  width: 100%;
+  height: 100%;
+  display: table;
+  background:#eee image-url('bg.png') bottom left repeat;
+}
+
+body { color: #333; background:none;}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -22,17 +29,6 @@ pre {
 .pagination { clear:both; margin-top:10px; text-align: left;}
 
 table tr.deleted td { text-decoration: line-through; color:#999}
-
-
-
-
-html {
-  width: 100%;
-  height: 100%;
-  display: table;
-  background:#eee image-url('bg.png') bottom left repeat;
-}
-body { background:none;}
 
 code { background:none; }
 
