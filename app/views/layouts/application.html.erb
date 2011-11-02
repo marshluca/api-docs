@@ -20,7 +20,7 @@
         </h3>
         <ul class="nav">
           <li<%= ' class=active' if ["projects"].index(params[:controller]) %>><a href="<%= projects_path %>">项目</a></li>
-          <li<%= ' class=active' if ["pages"].index(params[:controller]) %>><a href="/wiki">Wiki</a></li>
+          <li<%= ' class=active' if ["pages"].index(params[:controller]) %>><a href="#">FAQ</a></li>
         </ul>
         <form action="<%= %>" class="pull-left" method="get">
           <input type="text" name="key" placeholder="搜索" <% if params[:action] == "search" and params[:key] %>value="<%= params[:key] %>"<% end %> />
@@ -32,10 +32,10 @@
             <ul class="dropdown-menu">
               <li><a href="<%= user_path(current_user.name) %>">我的主页</a></li>
               <% if not params[:controller].match(/admin/) %>
-                <li><a href="<%= edit_user_registration_path %>">个人资料设置</a></li>
-                <% if current_user.admin? %><li><a href="/admin">后台</a></li><% end %>
+                <li><a href="<%= edit_user_registration_path %>">修改个人资料</a></li>
+                <% if current_user.admin? %><li><a href="/admin">后台管理</a></li><% end %>
               <% end %>
-              <li><a href="<%= destroy_user_session_path %>">退出</a></li>
+              <li><%= link_to('退出', destroy_user_session_path, :confirm => "Are you sure to logout?",  :method=>'delete') %></li>
             </ul>
           </li>
         </ul>

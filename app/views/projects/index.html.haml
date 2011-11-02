@@ -1,15 +1,7 @@
 .box
-  %h3 Listing projects
-  %table
-    %tr
-      %th 名称
-      %th 版本
-      %th 描述
-
+  %h2 我的项目列表
+  %br/
+  %ul
     - @projects.each do |project|
-      %tr
-        %td= link_to project.cname, project_docs_path(project)
-        %td= project.version
-        %td= project.desc
-
-  %br
+      %p
+        %li= link_to project.cname + project.version, project_docs_path(project)
