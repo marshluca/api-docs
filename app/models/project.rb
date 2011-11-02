@@ -13,6 +13,7 @@ class Project
   references_many :docs          # 项目关联的docs
 
   index [[:name, Mongo::ASCENDING], [:version, Mongo::ASCENDING]], :background => true
+  index 'categories.name'
 
   validates_presence_of :name, :cname, :version
 end

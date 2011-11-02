@@ -6,7 +6,6 @@ class Category
   field :count, :type => Integer, :default => 0
 
   embedded_in :project, :inverse_of => :categories
-  embedded_in :doc
 
   validates_presence_of :name
 end
