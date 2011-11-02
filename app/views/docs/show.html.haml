@@ -14,9 +14,8 @@
 
   %h4 请求参数
   %ul
-    %li typee:  请求类型
-    %li account_id:  用户id
-
+    - @doc.parameters.each do |p|
+      %li #{p.name}: #{p.desc}
 .box
   %h4 调用URL
   %p= @doc.url

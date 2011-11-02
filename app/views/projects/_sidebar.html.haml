@@ -1,0 +1,16 @@
+.box
+  %h2 记事本是什么?
+  %p.summary 这是一个基于云存储的网络记事本，你可以放心的把你的一些文本资料存放在此处。
+
+- if ['show'].include? controller.action_name
+  .box
+    %h2 增加版本
+    %p.summary 添加一个新的版本
+    %p
+      = link_to '新建版本', projects_path, :class => 'btn success'
+
+  .box
+    %h2 增加分类
+    %p.summary 添加一个新的分类
+    %p
+      = link_to '新建分类', projects_path, :class => 'btn success'

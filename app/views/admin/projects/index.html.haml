@@ -10,7 +10,7 @@
 
   - @projects.each do |project|
     %tr
-      %td= link_to project.cname, project_docs_path(project)
+      %td= link_to project.cname, project_path(project)
       %td= project.name
       %td= project.version
       %td= project.desc

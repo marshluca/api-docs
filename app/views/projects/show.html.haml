@@ -1,5 +1,22 @@
 .box
-  %h3= @project.cname
-  %p name: #{@project.name}
-  %p version: #{@project.version}
-  %p desc: #{@project.desc}
+  %h2= @project.cname
+  %p=  @project.desc
+  %br/
+
+  %h4 Name
+  %p= @project.name
+
+  %h4 Version
+  %p= @project.version
+
+  %h4 Author
+  %p= @project.author.name
+
+.box
+  %h4 分类列表
+  %ul
+    - @project.categories.each do |c|
+      %li= c.name
+
+.box
+  %h4 修订历史

@@ -1,5 +1,5 @@
 .box
-  %h2= @project.cname + @project.version
+  %h2= link_to @project.cname + @project.version, @project
   %p.summary= @project.desc
 
 .box
