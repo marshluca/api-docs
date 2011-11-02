@@ -1,16 +1,18 @@
 %h1 Listing admin_projects
 
-%table
-  %tr
-    %th
-    %th
-    %th
+%table.grid
+  %tr.head
+    %th Name
+    %th CName
+    %th Version
+    %th Handle
 
-  - @admin_projects.each do |admin_project|
+  - @projects.each do |project|
     %tr
-      %td= link_to 'Show', admin_project
-      %td= link_to 'Edit', edit_admin_project_path(admin_project)
-      %td= link_to 'Destroy', admin_project, :confirm => 'Are you sure?', :method => :delete
+      %td= project.name
+      %td= project.cname
+      %td= project.version
+      %td  #{link_to 'Edit', edit_admin_project_path(project)} | #{link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete}
 
 %br
 

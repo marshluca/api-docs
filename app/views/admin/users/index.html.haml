@@ -2,15 +2,17 @@
 
 %table
   %tr
-    %th
-    %th
-    %th
+    %th Name
+    %th Email
+    %th Ability
+    %th Handle
 
-  - @admin_users.each do |admin_user|
+  - @users.each do |user|
     %tr
-      %td= link_to 'Show', admin_user
-      %td= link_to 'Edit', edit_admin_user_path(admin_user)
-      %td= link_to 'Destroy', admin_user, :confirm => 'Are you sure?', :method => :delete
+      %td= user.name
+      %td= user.email
+      %td= user.ability
+      %td #{link_to 'Edit', edit_admin_user_path(user)} | #{link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete}
 
 %br
 
