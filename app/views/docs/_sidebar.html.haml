@@ -1,0 +1,5 @@
+.box
+  %ul
+    - @project.categories.each do |c|
+      %li
+        %a{:href => "#"} #{c.name}
