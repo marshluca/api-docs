@@ -1,8 +1,8 @@
-class Admin::DocsController < ApplicationController
+class Admin::DocsController < Admin::ApplicationController
   # GET /admin/docs
   # GET /admin/docs.json
   def index
-    @admin_docs = Admin::Doc.all
+    @admin_docs = Doc.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class Admin::DocsController < ApplicationController
   # GET /admin/docs/1
   # GET /admin/docs/1.json
   def show
-    @admin_doc = Admin::Doc.find(params[:id])
+    @admin_doc = Doc.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class Admin::DocsController < ApplicationController
   # GET /admin/docs/new
   # GET /admin/docs/new.json
   def new
-    @admin_doc = Admin::Doc.new
+    @admin_doc = Doc.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class Admin::DocsController < ApplicationController
 
   # GET /admin/docs/1/edit
   def edit
-    @admin_doc = Admin::Doc.find(params[:id])
+    @admin_doc = Doc.find(params[:id])
   end
 
   # POST /admin/docs
   # POST /admin/docs.json
   def create
-    @admin_doc = Admin::Doc.new(params[:admin_doc])
+    @admin_doc = Doc.new(params[:admin_doc])
 
     respond_to do |format|
       if @admin_doc.save
@@ -56,7 +56,7 @@ class Admin::DocsController < ApplicationController
   # PUT /admin/docs/1
   # PUT /admin/docs/1.json
   def update
-    @admin_doc = Admin::Doc.find(params[:id])
+    @admin_doc = Doc.find(params[:id])
 
     respond_to do |format|
       if @admin_doc.update_attributes(params[:admin_doc])
@@ -72,7 +72,7 @@ class Admin::DocsController < ApplicationController
   # DELETE /admin/docs/1
   # DELETE /admin/docs/1.json
   def destroy
-    @admin_doc = Admin::Doc.find(params[:id])
+    @admin_doc = Doc.find(params[:id])
     @admin_doc.destroy
 
     respond_to do |format|

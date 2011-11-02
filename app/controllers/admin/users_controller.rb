@@ -1,8 +1,8 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::ApplicationController
   # GET /admin/users
   # GET /admin/users.json
   def index
-    @admin_users = Admin::User.all
+    @admin_users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class Admin::UsersController < ApplicationController
   # GET /admin/users/1
   # GET /admin/users/1.json
   def show
-    @admin_user = Admin::User.find(params[:id])
+    @admin_user = User.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class Admin::UsersController < ApplicationController
   # GET /admin/users/new
   # GET /admin/users/new.json
   def new
-    @admin_user = Admin::User.new
+    @admin_user = User.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class Admin::UsersController < ApplicationController
 
   # GET /admin/users/1/edit
   def edit
-    @admin_user = Admin::User.find(params[:id])
+    @admin_user = User.find(params[:id])
   end
 
   # POST /admin/users
   # POST /admin/users.json
   def create
-    @admin_user = Admin::User.new(params[:admin_user])
+    @admin_user = User.new(params[:admin_user])
 
     respond_to do |format|
       if @admin_user.save
@@ -56,7 +56,7 @@ class Admin::UsersController < ApplicationController
   # PUT /admin/users/1
   # PUT /admin/users/1.json
   def update
-    @admin_user = Admin::User.find(params[:id])
+    @admin_user = User.find(params[:id])
 
     respond_to do |format|
       if @admin_user.update_attributes(params[:admin_user])
@@ -72,7 +72,7 @@ class Admin::UsersController < ApplicationController
   # DELETE /admin/users/1
   # DELETE /admin/users/1.json
   def destroy
-    @admin_user = Admin::User.find(params[:id])
+    @admin_user = User.find(params[:id])
     @admin_user.destroy
 
     respond_to do |format|
