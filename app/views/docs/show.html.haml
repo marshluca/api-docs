@@ -2,10 +2,28 @@
   %h3= @doc.name
   %p= @doc.desc
   %br/
-  %p URL: #{@doc.url}
-  %p Category: #{@doc.category}
-  %p HTTP: #{@doc.http_method}
-  %p Author: #{@doc.author.name}
-  %p Authenticated: #{@doc.authenticated}
-  %p Sample: <script src="#{@doc.gist_url}"></script>
 
+  %h4 请求类型
+  %p= @doc.http_method
+
+  %h4 是否需要登录
+  %p= @doc.authenticated ? '是' : '否'
+
+  %h4 支持格式
+  %p= @doc.format.join(', ')
+
+  %h4 请求参数
+  %ul
+    %li typee:  请求类型
+    %li account_id:  用户id
+
+.box
+  %h4 调用URL
+  %p= @doc.url
+  %br/
+
+  %h4 使用示例
+  <script src="https://gist.github.com/1031385.js?file=tqq_oauth.rb"></script>
+
+.box
+  %h4 修订历史
