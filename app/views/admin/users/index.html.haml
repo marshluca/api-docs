@@ -1,17 +1,19 @@
-%h1 Listing admin_users
+%h1 Listing Users
 
 %table
   %tr
     %th Name
     %th Email
-    %th Ability
+    %th Role
+    %th Projects
     %th Handle
 
   - @users.each do |user|
     %tr
       %td= user.name
       %td= user.email
-      %td= user.ability
+      %td= user.role
+      %td= user.projects.join(', ')
       %td #{link_to 'Edit', edit_admin_user_path(user)} | #{link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete}
 
 %br

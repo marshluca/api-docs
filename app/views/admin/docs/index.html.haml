@@ -1,4 +1,4 @@
-%h1 Listing admin_docs
+%h1 Listing Docs
 
 %table
   %tr
@@ -7,8 +7,8 @@
     %th Author
     %th Project
     %th Category
-    %th Parameters
     %th Method
+    %th Format
     %th Auth
     %th Handle
 
@@ -17,12 +17,12 @@
       %td= doc.name
       %td= doc.desc
       %td= doc.author.name
-      %td= doc.project.name
+      %td= [doc.project.name, doc.project.version].join('-')
       %td= doc.category.name
-      %td= doc.parameters
       %td= doc.http_method
+      %td= doc.format
       %td= doc.authenticated.to_s
-      %td #{link_to 'Edit', edit_admin_doc_path(doc)}
+      %td  #{link_to 'Edit', edit_admin_doc_path(doc)} | #{link_to 'Destroy', edit_admin_doc_path(doc), :confirm => 'Are you sure?', :method => :delete}
 
 %br
 
