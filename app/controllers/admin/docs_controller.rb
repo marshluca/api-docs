@@ -2,7 +2,7 @@ class Admin::DocsController < Admin::ApplicationController
   # GET /admin/docs
   # GET /admin/docs.json
   def index
-    @docs = Doc.page(params[:page]).per(params[:per] || 10)
+    @docs = Doc.page(params[:page]).per(params[:per])
 
     respond_to do |format|
       format.html # index.html.erb
