@@ -1,7 +1,11 @@
-= simple_form_for(@project, :url => admin_project_url) do |f|
+= simple_form_for(@project) do |f|
   = f.error_notification
 
   .inputs
+    = f.input :name
+    = f.input :cname
+    = f.input :desc
+    = f.input :version
 
   .actions
     = f.button :submit

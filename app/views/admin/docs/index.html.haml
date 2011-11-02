@@ -1,10 +1,11 @@
-%h1 Listing Docs
+%h2 Listing Docs
 
-%table
-  %tr
+%h1= link_to 'New Doc', new_admin_doc_path
+
+%table.grid
+  %tr.head
     %th Name
     %th Desc
-    %th Author
     %th Project
     %th Category
     %th Method
@@ -16,14 +17,13 @@
     %tr
       %td= link_to doc.name, project_doc_path(doc.project, doc)
       %td= doc.desc
-      %td= doc.author.name
       %td= [doc.project.name, doc.project.version].join('-')
-      %td= doc.category.name
+      %td= doc.category
       %td= doc.http_method
-      %td= doc.format
+      %td= doc.format.join(', ')
       %td= doc.authenticated.to_s
       %td  #{link_to 'Edit', edit_admin_doc_path(doc)} | #{link_to 'Destroy', project_doc_path(doc.project, doc), :confirm => 'Are you sure?', :method => :delete}
 
 %br
 
-= link_to 'New Doc', new_admin_doc_path
+%p= paginate @docs

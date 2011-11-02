@@ -1,7 +1,12 @@
-= simple_form_for(@doc, :url => admin_doc_url) do |f|
+= simple_form_for(@doc, :url => admin_docs_url) do |f|
   = f.error_notification
 
   .inputs
+    = f.input :name
+    = f.input :project_id
+    = f.input :category
+    = f.input :desc
+    = f.input :url
 
   .actions
     = f.button :submit
