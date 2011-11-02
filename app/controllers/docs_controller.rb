@@ -6,6 +6,11 @@ class DocsController < BaseController
 
   belongs_to :project
 
+  def category
+    @docs = @project.docs.where(:category => params[:cate])
+    render :index
+  end
+
   private
     def find_project
       @project = Project.find(params[:project_id])

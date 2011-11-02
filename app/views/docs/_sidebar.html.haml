@@ -1,5 +1,10 @@
 .box
+  %h2= @project.cname + @project.version
+  %p.summary= @project.desc
+
+.box
   %ul
+    %li= link_to '全部', project_docs_path(@project)
     - @project.categories.each do |c|
       %li
-        %a{:href => "#"} #{c.name}
+        = link_to(c.name, :action => 'category', :cate => c.name)

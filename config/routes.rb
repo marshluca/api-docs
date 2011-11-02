@@ -6,7 +6,11 @@ Wiki::Application.routes.draw do
   resources :users, :only => [:index, :show]
 
   resources :projects do
-    resources :docs
+    resources :docs do
+      collection do
+        get 'category/:cate' => 'docs#category'
+      end
+    end
   end
 
   namespace :admin do
