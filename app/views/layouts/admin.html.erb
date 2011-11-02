@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wiki - API Document</title>
+  <link rel="shortcut icon" href="<%= asset_path("rails.png") %>" />
+  <%= stylesheet_link_tag "admin" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <div class="topbar" data-dropdown="dropdown">
+    <div class="topbar-inner">
+      <div class="container">
+        <a href="<%= admin_root_path %>" class="brand">Admin</a>
+        <ul class="nav">
+          <li<%= " class=active" if params[:controller] == "admin/home" %>><a href="<%= admin_root_path %>">Dashboard</a></li>
+          <li<%= " class=active" if params[:controller] == "admin/users" %>><a href="<%= admin_users_path %>">Users</a></li>
+          <li<%= " class='active'" if params[:controller] == "admin/projects" %>><a href="<%= admin_projects_path %>">Projects</a></li>
+          <li<%= " class='active'" if params[:controller] == "admin/docs" %>><a href="<%= admin_docs_path %>">Docs</a></li>
+        </ul>
+        <ul class="nav secondary-nav" id="userbar">
+          <li>
+            <a href="#" class="dropdown-toggle"><%= current_user.name %></a>
+            <ul class="dropdown-menu">
+              <li><a href="<%= root_path %>">回到前台</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div id="main" class="box">
+      <%#= notice_message %>
+      <%= yield %>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <!-- <p class="suggest">使用 <a href="http://www.mozillaonline.com/" target="_blank" rel="nofollow">Firefox</a> 或 <a href="http://www.google.com/chrome" target="_blank" rel="nofollow">Chrome</a> 浏览访问本站将会获得更佳的视觉体验.</p> -->
+    </div>
+  </footer>
+</body>
+</html>
