@@ -5,8 +5,8 @@ Wiki::Application.routes.draw do
   devise_for :users
   resources :users, :only => [:index, :show]
 
-  resources :projects do
-    resources :docs do
+  resources :projects, :only => [:index, :show] do
+    resources :docs, :only => [:index, :show] do
       collection do
         get 'category/:cate' => 'docs#category'
       end

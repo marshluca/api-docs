@@ -2,4 +2,4 @@
   %h2 记事本是什么?
   %p.summary 这是一个基于云存储的网络记事本，你可以放心的把你的一些文本资料存放在此处。
   %p
-    %a{:href => "#{new_project_path}", :class => 'btn success' } 新建
+    = link_to '新建', projects_path, :class => 'btn success'

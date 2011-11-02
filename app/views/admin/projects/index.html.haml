@@ -2,16 +2,16 @@
 
 %table.grid
   %tr.head
-    %th Name
     %th CName
+    %th Name
     %th Version
     %th Desc
     %th Handle
 
   - @projects.each do |project|
     %tr
+      %td= link_to project.cname, project_docs_path(project)
       %td= project.name
-      %td= project.cname
       %td= project.version
       %td= project.desc
       %td  #{link_to 'Edit', edit_admin_project_path(project)} | #{link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete}
