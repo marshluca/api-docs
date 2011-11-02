@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Wiki - API Document</title>
-  <link rel="shortcut icon" href="<%#= asset_path("rails.png") %>" />
+  <link rel="shortcut icon" href="<%= asset_path("rails.png") %>" />
   <%= stylesheet_link_tag "admin" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %>
@@ -37,7 +37,7 @@
   </div>
   <footer class="footer">
     <div class="container">
-      <!-- <p class="suggest">使用 <a href="http://www.mozillaonline.com/" target="_blank" rel="nofollow">Firefox</a> 或 <a href="http://www.google.com/chrome" target="_blank" rel="nofollow">Chrome</a> 浏览访问本站将会获得更佳的视觉体验.</p> -->
+      <%#= Setting.foot_html %>
     </div>
   </footer>
 </body>

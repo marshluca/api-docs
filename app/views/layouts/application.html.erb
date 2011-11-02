@@ -56,7 +56,12 @@
     </ul> -->
     <div id="main" class="container-fluid">
       <%#= notice_message %>
-      <%= yield %>
+      <div class='sidebar'>
+        <%= render 'sidebar' %>
+      </div>
+      <div class='content'>
+        <%= yield %>
+      </div>
     </div>
   </div>
   <footer class="footer">

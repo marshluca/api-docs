@@ -1,11 +1,9 @@
-%p#notice= notice
+.box
+  %h3= @project.cname
+  %p name: #{@project.name}
+  %p version: #{@project.version}
+  %p desc: #{@project.desc}
 
-%p= @project.cname
-
-%p= @project.version
-
-%p= @project.desc
-
-= link_to 'Edit', edit_project_path(@project)
-\|
-= link_to 'Back', projects_path
+  = link_to 'Edit', edit_project_path(@project)
+  \|
+  = link_to 'Back', projects_path
