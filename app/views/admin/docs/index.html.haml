@@ -14,7 +14,7 @@
 
   - @docs.each do |doc|
     %tr
-      %td= doc.name
+      %td= link_to doc.name, project_doc_path(doc.project, doc)
       %td= doc.desc
       %td= doc.author.name
       %td= [doc.project.name, doc.project.version].join('-')
@@ -22,7 +22,7 @@
       %td= doc.http_method
       %td= doc.format
       %td= doc.authenticated.to_s
-      %td  #{link_to 'Edit', edit_admin_doc_path(doc)} | #{link_to 'Destroy', edit_admin_doc_path(doc), :confirm => 'Are you sure?', :method => :delete}
+      %td  #{link_to 'Edit', edit_admin_doc_path(doc)} | #{link_to 'Destroy', project_doc_path(doc.project, doc), :confirm => 'Are you sure?', :method => :delete}
 
 %br
 
