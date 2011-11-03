@@ -5,7 +5,7 @@ class User
 
   gravtastic :secure => true,
              :filetype => :png,
-             :size => 50
+             :size => 120
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
