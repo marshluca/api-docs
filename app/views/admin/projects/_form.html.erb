@@ -20,10 +20,11 @@
     <div class="clearfix">
       <%= f.label :desc %>
       <div class="input">
-      <%= f.text_field :desc, :class => "xxlarge",:style => "height:80px;" %></div>
+      <%= f.text_field :desc, :class => "xxlarge", :style => "height:80px;" %></div>
     </div>
     <div class="actions">
-      <button class="btn primary">Save</button> <%= link_to 'Back', admin_projects_path, :class => 'btn' %>
+      <button class="btn primary">Save</button>
+      <%= link_to 'Back', admin_projects_path, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>

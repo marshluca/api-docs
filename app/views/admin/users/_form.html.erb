@@ -20,10 +20,11 @@
     <div class="clearfix">
       <%= f.label :ability %>
       <div class="input">
-      <%= f.select :ability, [0, 1, 2].collect { |s| [User::ROLES[s], s] } %></div>
+      <%= f.select :ability, User::ROLES.keys.collect { |s| [User::ROLES[s], s] } %></div>
     </div>
     <div class="actions">
-      <button class="btn primary">Save</button> <%= link_to 'Back', admin_users_path, :class => 'btn' %>
+      <button class="btn primary">Save</button>
+      <%= link_to 'Back', admin_users_path, :class => 'btn' %>
     </div>
   </fieldset>
 <% end %>
