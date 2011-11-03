@@ -40,7 +40,7 @@ class Admin::DocsController < Admin::ApplicationController
   # POST /admin/docs
   # POST /admin/docs.json
   def create
-    @doc = Doc.new(params[:admin_doc])
+    @doc = Doc.new(params[:doc])
 
     respond_to do |format|
       if @doc.save
@@ -59,7 +59,7 @@ class Admin::DocsController < Admin::ApplicationController
     @doc = Doc.find(params[:id])
 
     respond_to do |format|
-      if @doc.update_attributes(params[:admin_doc])
+      if @doc.update_attributes(params[:doc])
         format.html { redirect_to @doc, :notice => 'Doc was successfully updated.' }
         format.json { head :ok }
       else

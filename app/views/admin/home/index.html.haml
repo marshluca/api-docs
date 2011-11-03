@@ -1,2 +1,13 @@
-%h1 Admin::Home#index
-%p Find me in app/views/admin/home/index.html.haml
+- content_for :styles do
+  = stylesheet_link_tag "topics"
+
+.box
+  %h3 更新日志
+  .topics
+    - @logs.each do |log|
+      .topic.topic_line
+        .pull-left.avatar= image_tag(log.author.gravatar_url)
+        .right_info
+          .infos
+            .title #{log.author.name} #{log.desc}: #{link_to log.doc.name, project_doc_path(log.doc.project, log.doc)}
+            .info.time= log.created_at.to_s(:db)

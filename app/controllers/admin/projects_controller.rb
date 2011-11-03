@@ -40,7 +40,7 @@ class Admin::ProjectsController < Admin::ApplicationController
   # POST /admin/projects
   # POST /admin/projects.json
   def create
-    @project = Project.new(params[:admin_project])
+    @project = Project.new(params[:project])
 
     respond_to do |format|
       if @project.save
@@ -59,7 +59,7 @@ class Admin::ProjectsController < Admin::ApplicationController
     @project = Project.find(params[:id])
 
     respond_to do |format|
-      if @project.update_attributes(params[:admin_project])
+      if @project.update_attributes(params[:project])
         format.html { redirect_to @project, :notice => 'Project was successfully updated.' }
         format.json { head :ok }
       else

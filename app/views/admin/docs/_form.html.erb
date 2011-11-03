@@ -1,0 +1,47 @@
+<%= form_for([:admin, @doc]) do |f| %>
+  <fieldset>
+    <legend><%= @title %></legend>
+    <%= render 'shared/error_messages', :target => @doc %>
+    <div class="clearfix">
+      <%= f.label :name %>
+      <div class="input">
+      <%= f.text_field :name %></div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :project_id %>
+      <div class="input">
+      <%= f.select :project_id, Project.all.collect { |s| [s.name + '-' + s.version, s.id] } %></div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :method %>
+      <div class="input">
+      <%= f.text_field :http_method %></div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :format %>
+      <div class="input">
+      <%= f.text_field :format %></div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :url %>
+      <div class="input">
+      <%= f.text_field :url %></div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :desc %>
+      <div class="input">
+        <%= f.text_area :desc, :class => "xxlarge",:style => "height:80px;" %>
+      </div>
+    </div>
+    <div class="clearfix">
+      <%= f.label :authenticated %>
+      <div class="input">
+        <%= f.check_box :authenticated %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary">Save</button><%= link_to 'Back', admin_docs_path, :class => 'btn' %>
+    </div>
+  </fieldset>
+<% end %>

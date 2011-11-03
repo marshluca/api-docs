@@ -4,7 +4,9 @@
   <title>Wiki - API Document</title>
   <link rel="shortcut icon" href="<%= asset_path("rails.png") %>" />
   <%= stylesheet_link_tag "application" %>
+  <%= yield :styles %>
   <%= javascript_include_tag "application" %>
+  <%= yield :scripts %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -13,7 +15,6 @@
       <div class="container">
         <a href="<%= admin_root_path %>" class="brand">Admin</a>
         <ul class="nav">
-          <li<%= " class=active" if params[:controller] == "admin/home" %>><a href="<%= admin_root_path %>">Dashboard</a></li>
           <li<%= " class=active" if params[:controller] == "admin/users" %>><a href="<%= admin_users_path %>">Users</a></li>
           <li<%= " class='active'" if params[:controller] == "admin/projects" %>><a href="<%= admin_projects_path %>">Projects</a></li>
           <li<%= " class='active'" if params[:controller] == "admin/docs" %>><a href="<%= admin_docs_path %>">Docs</a></li>
