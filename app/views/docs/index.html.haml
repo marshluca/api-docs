@@ -2,7 +2,7 @@
   = stylesheet_link_tag "topics"
 
 .box
-  %h3 接口列表
+  %h3 #{params[:cate]}接口列表
   .topics
     - @docs.each do |doc|
       .topic.topic_line

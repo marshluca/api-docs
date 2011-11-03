@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Wiki - API Document</title>
-  <link rel="shortcut icon" href="<%= asset_path("rails.png") %>" />
-  <%= stylesheet_link_tag "application" %>
-  <%= yield :styles %>
-  <%= javascript_include_tag "application" %>
-  <%= yield :scripts %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
-  <div class="topbar" data-dropdown="dropdown">
-    <div class="topbar-inner">
-      <div class="container">
-        <a href="<%= admin_root_path %>" class="brand">Admin</a>
-        <ul class="nav">
-          <li<%= " class=active" if params[:controller] == "admin/users" %>><a href="<%= admin_users_path %>">Users</a></li>
-          <li<%= " class='active'" if params[:controller] == "admin/projects" %>><a href="<%= admin_projects_path %>">Projects</a></li>
-          <li<%= " class='active'" if params[:controller] == "admin/docs" %>><a href="<%= admin_docs_path %>">Docs</a></li>
-        </ul>
-        <ul class="nav secondary-nav" id="userbar">
-          <li>
+  <head>
+    <title>Wiki - API Document</title>
+    <link rel="shortcut icon" href="<%= asset_path("rails.png") %>" />
+    <%= stylesheet_link_tag "application" %>
+    <%= yield :styles %>
+    <%= javascript_include_tag "application" %>
+    <%= yield :scripts %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <div class="topbar" data-dropdown="dropdown">
+      <div class="topbar-inner">
+        <div class="container">
+          <a href="<%= admin_root_path %>" class="brand">Admin</a>
+          <ul class="nav">
+            <li<%= " class=active" if params[:controller] == "admin/users" %>><a href="<%= admin_users_path %>">Users</a></li>
+            <li<%= " class='active'" if params[:controller] == "admin/projects" %>><a href="<%= admin_projects_path %>">Projects</a></li>
+            <li<%= " class='active'" if params[:controller] == "admin/docs" %>><a href="<%= admin_docs_path %>">Docs</a></li>
+          </ul>
+          <ul class="nav secondary-nav" id="userbar">
+            <li>
             <a href="#" class="dropdown-toggle"><%= current_user.name %></a>
             <ul class="dropdown-menu">
               <li><a href="<%= root_path %>">回到前台</a></li>
             </ul>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <div id="main" class="box">
-      <%#= notice_message %>
-      <%= yield %>
+    <div class="container">
+      <div id="main" class="box">
+        <%#= notice_message %>
+        <%= yield %>
+      </div>
     </div>
-  </div>
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <%#= Setting.foot_html %>
     </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>

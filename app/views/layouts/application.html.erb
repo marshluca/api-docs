@@ -1,74 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= raw @page_title %><%= Setting.app_name %></title>
-  <meta name="keywords" content="API Document" />
-  <meta name="description" content="API Document" />
-  <link rel="shortcut icon" href="<%= asset_path("rails.png") %>" />
-  <%= csrf_meta_tag %>
-  <%= stylesheet_link_tag "application" %>
-  <%= yield :styles %>
-  <%= javascript_include_tag "application" %>
-  <%= yield :scripts %>
-</head>
-<body>
-  <div class="topbar" data-dropdown="dropdown">
-    <div class="topbar-inner">
-      <div class="container">
-        <h3>
-          <a href="/"><%= Setting.app_name %></a>
-        </h3>
-        <ul class="nav">
-          <li<%= ' class=active' if ["projects"].index(params[:controller]) %>><a href="<%= projects_path %>">项目</a></li>
-          <li<%= ' class=active' if ["pages"].index(params[:controller]) %>><a href="#">FAQ</a></li>
-        </ul>
-        <form action="<%= %>" class="pull-left" method="get">
-          <input type="text" name="key" placeholder="搜索" <% if params[:action] == "search" and params[:key] %>value="<%= params[:key] %>"<% end %> />
-        </form>
-        <% if user_signed_in? %>
-        <ul class="nav secondary-nav" id="userbar">
-          <li>
-            <a href="<%= user_path(current_user.name) %>" class="dropdown-toggle"><%= current_user.name %></a>
-            <ul class="dropdown-menu">
-              <li><a href="<%= user_path(current_user.name) %>">我的主页</a></li>
-              <% if not params[:controller].match(/admin/) %>
-                <li><a href="<%= edit_user_registration_path %>">修改个人资料</a></li>
-                <% if current_user.admin? %><li><a href="/admin">后台管理</a></li><% end %>
-              <% end %>
-              <li><%= link_to('退出', destroy_user_session_path, :confirm => "Are you sure to logout?",  :method=>'delete') %></li>
-            </ul>
-          </li>
-        </ul>
-        <% else %>
-          <ul class="nav secondary-nav" id="userbar">
-            <li<%=' class=active' if params[:controller] == "devise/registrations" and params[:action] == "new" %>><a href="<%= new_user_registration_path %>">注册</a></li>
-            <li<%=' class=active' if params[:controller] == "devise/sessions" and params[:action] == "new" %>><a href="<%= new_user_session_path %>">登陆</a></li>
+  <head>
+    <title><%= raw @page_title %><%= Setting.app_name %></title>
+    <meta name="keywords" content="API Document" />
+    <meta name="description" content="API Document" />
+    <link rel="shortcut icon" href="<%= asset_path("rails.png") %>" />
+    <%= csrf_meta_tag %>
+    <%= stylesheet_link_tag "application" %>
+    <%= yield :styles %>
+    <%= javascript_include_tag "application" %>
+    <%= yield :scripts %>
+  </head>
+  <body>
+    <div class="topbar" data-dropdown="dropdown">
+      <div class="topbar-inner">
+        <div class="container">
+          <h3>
+            <a href="/"><%= Setting.app_name %></a>
+          </h3>
+          <ul class="nav">
+            <li<%= ' class=active' if ["projects"].index(params[:controller]) %>><a href="<%= projects_path %>">项目</a></li>
+            <li<%= ' class=active' if ["pages"].index(params[:controller]) %>><a href="#">FAQ</a></li>
           </ul>
-        <% end %>
+          <form action="<%= %>" class="pull-left" method="get">
+            <input type="text" name="key" placeholder="搜索" <% if params[:action] == "search" and params[:key] %>value="<%= params[:key] %>"<% end %> />
+          </form>
+          <% if user_signed_in? %>
+            <ul class="nav secondary-nav" id="userbar">
+              <li>
+              <a href="<%= user_path(current_user.name) %>" class="dropdown-toggle"><%= current_user.name %></a>
+              <ul class="dropdown-menu">
+                <li><a href="<%= user_path(current_user.name) %>">我的主页</a></li>
+                <% if not params[:controller].match(/admin/) %>
+                  <li><a href="<%= edit_user_registration_path %>">修改个人资料</a></li>
+                  <% if current_user.admin? %><li><a href="/admin">后台管理</a></li><% end %>
+                <% end %>
+                <li><%= link_to('退出', destroy_user_session_path, :confirm => "Are you sure to logout?",  :method=>'delete') %></li>
+              </ul>
+              </li>
+            </ul>
+          <% else %>
+            <ul class="nav secondary-nav" id="userbar">
+              <li<%=' class=active' if params[:controller] == "devise/registrations" and params[:action] == "new" %>><a href="<%= new_user_registration_path %>">注册</a></li>
+              <li<%=' class=active' if params[:controller] == "devise/sessions" and params[:action] == "new" %>><a href="<%= new_user_session_path %>">登陆</a></li>
+            </ul>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <!-- <ul class="breadcrumb">
-      <li><a href="<%= root_path %>">Root</a> <span class="divider">/</span></li>
-      <%= yield :base_sitemap %>
-      <%= yield :sitemap %>
-    </ul> -->
-    <div id="main" class="container-fluid">
-      <%#= notice_message %>
-      <div class='sidebar'>
-        <%= render 'sidebar' %>
-      </div>
-      <div class='content'>
-        <%= yield %>
+    <div class="container">
+      <!-- <ul class="breadcrumb">
+        <li><a href="<%= root_path %>">Root</a> <span class="divider">/</span></li>
+        <%= yield :base_sitemap %>
+        <%= yield :sitemap %>
+      </ul> -->
+      <div id="main" class="container-fluid">
+        <%#= notice_message %>
+        <div class='sidebar'>
+          <%= render 'sidebar' %>
+        </div>
+        <div class='content'>
+          <%= yield %>
+        </div>
       </div>
     </div>
-  </div>
-  <footer class="footer">
+    <footer class="footer">
     <div class="container">
       <%#= raw SiteConfig.footer_html %>
     </div>
-  </footer>
-  <%= render 'shared/google_analytics' %>
-</body>
+    </footer>
+    <%= render 'shared/google_analytics' %>
+  </body>
 </html>
