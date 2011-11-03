@@ -1,4 +1,7 @@
-%p
-  User: #{@user.name}
-%p
-  Email: #{@user.email if @user.email}
+.box
+  %p
+    User: #{@user.name}
+  %p
+    Email: #{@user.email if @user.email}
+  %p
+    Role: #{@user.role}
