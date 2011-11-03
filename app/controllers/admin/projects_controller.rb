@@ -44,6 +44,7 @@ class Admin::ProjectsController < Admin::ApplicationController
 
     respond_to do |format|
       if @project.save
+        current_user.add_project(@project.name)
         format.html { redirect_to @project, :notice => 'Project was successfully created.' }
         format.json { render :json => @project, :status => :created, :location => @project }
       else
