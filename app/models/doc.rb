@@ -25,4 +25,16 @@ class Doc
   index [[:category, Mongo::ASCENDING]], :background => true
 
   validates :name, :presence => true #, :uniqueness => true
+
+  after_create :build_insert_log
+  after_update :build_update_log
+
+  private
+    def build_insert_log
+      user_logs.create :name => 'insert'
+    end
+
+    def build_update_log
+      user_logs.create :name => 'update'
+    end
 end

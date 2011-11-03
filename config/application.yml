@@ -1,5 +1,5 @@
 defaults: &defaults
-  app_name: "API Docs"
+  app_name: "文档系统"
   domain: "127.0.0.1:3000"
   google_analytics_key: "apikey"
   foot_html: "&copy; API Docs."
