@@ -32,4 +32,10 @@ class User
   def admin?
     ability > 0
   end
+
+  def add_project(project)
+    unless projects.include? project
+      update_attributes :projects => projects.push(project).uniq
+    end
+  end
 end
