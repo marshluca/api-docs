@@ -13,11 +13,22 @@
   %p= @doc.format.join(', ')
 
   %h4 请求参数
-  %ul
+  %table
+    %tr
+      %th Name
+      %th Type
+      %th Required
+      %th Desc
+
     - @doc.parameters.each do |p|
-      %li #{p.name}: #{p.desc}
+      %tr
+        %td= p.name
+        %td= p.type
+        %td= p.required
+        %td= p.desc
+
 .box
-  %h4 调用URL
+  %h4 URL
   %p= @doc.url
   %br/
 
