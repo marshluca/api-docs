@@ -1,5 +1,5 @@
 class HomeController < BaseController
   def index
-    @feeds = UserLog.all
+    @logs = UserLog.all
   end
 end
