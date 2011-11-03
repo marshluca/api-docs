@@ -1,12 +1,12 @@
-%h3 Listing Projects
+%h3 项目管理
 
 %table.grid
   %tr.head
-    %th CName
-    %th Name
-    %th Version
-    %th Desc
-    %th Handle
+    %th 名称
+    %th 项目
+    %th 版本
+    %th 描述
+    %th 操作
 
   - @projects.each do |project|
     %tr
@@ -14,8 +14,8 @@
       %td= project.name
       %td= project.version
       %td= project.desc
-      %td  #{link_to 'Edit', edit_admin_project_path(project)} | #{link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete}
+      %td  #{link_to '编辑', edit_admin_project_path(project)} | #{link_to '删除', project, :confirm => '你确定删除吗?', :method => :delete}
 
 %br
 
-= link_to 'New Project', new_admin_project_path, :class => 'btn success'
+= link_to '新建项目', new_admin_project_path, :class => 'btn success'

@@ -1,12 +1,12 @@
-%h3 Listing Users
+%h3 用户管理
 
 %table
   %tr
-    %th Name
-    %th Email
-    %th Role
-    %th Projects
-    %th Handle
+    %th 用户
+    %th 邮箱
+    %th 角色
+    %th 项目
+    %th 操作
 
   - @users.each do |user|
     %tr
@@ -14,6 +14,6 @@
       %td= user.email
       %td= user.role
       %td= user.projects.join(', ')
-      %td #{link_to 'Edit', edit_admin_user_path(user)} | #{link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete}
+      %td #{link_to '编辑', edit_admin_user_path(user)} | #{link_to '删除', user, :confirm => '你确定删除吗?', :method => :delete}
 
 %br

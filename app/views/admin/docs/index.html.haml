@@ -1,15 +1,15 @@
-%h3 Listing Docs
+%h3 接口管理
 
 %table.grid
   %tr.head
-    %th Name
-    %th Desc
-    %th Project
-    %th Category
-    %th Method
-    %th Format
-    %th Auth
-    %th Handle
+    %th 名称
+    %th 描述
+    %th 项目
+    %th 分类
+    %th 请求
+    %th 格式
+    %th 授权
+    %th 操作
 
   - @docs.each do |doc|
     %tr
@@ -20,8 +20,8 @@
       %td= doc.http_method
       %td= doc.format.join(', ')
       %td= doc.authenticated.to_s
-      %td  #{link_to 'Edit', edit_admin_doc_path(doc)} | #{link_to 'Destroy', project_doc_path(doc.project, doc), :confirm => 'Are you sure?', :method => :delete}
+      %td  #{link_to '编辑', edit_admin_doc_path(doc)} | #{link_to '删除', project_doc_path(doc.project, doc), :confirm => '你确定要删除吗?', :method => :delete}
 
 %br
 
-= link_to 'New Doc', new_admin_doc_path, :class => 'btn success'
+= link_to '新增接口', new_admin_doc_path, :class => 'btn success'
