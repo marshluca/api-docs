@@ -13,11 +13,11 @@
     <div class="topbar" data-dropdown="dropdown">
       <div class="topbar-inner">
         <div class="container">
-          <a href="<%= admin_root_path %>" class="brand">Admin</a>
+          <%= link_to '后台管理', admin_root_path, :class => 'brand' %>
           <ul class="nav">
-            <li<%= " class=active" if params[:controller] == "admin/users" %>><a href="<%= admin_users_path %>">Users</a></li>
-            <li<%= " class='active'" if params[:controller] == "admin/projects" %>><a href="<%= admin_projects_path %>">Projects</a></li>
-            <li<%= " class='active'" if params[:controller] == "admin/docs" %>><a href="<%= admin_docs_path %>">Docs</a></li>
+            <li<%= " class='active'" if params[:controller] == "admin/projects" %>><%= link_to '项目', admin_projects_path %></li>
+            <li<%= " class='active'" if params[:controller] == "admin/docs" %>><%= link_to '接口', admin_docs_path %></li>
+            <li<%= " class='active'" if params[:controller] == "admin/users" %>><%= link_to '用户', admin_users_path %></li>
           </ul>
           <ul class="nav secondary-nav" id="userbar">
             <li>
@@ -38,7 +38,6 @@
     </div>
     <footer class="footer">
     <div class="container">
-      <%#= Setting.foot_html %>
     </div>
     </footer>
   </body>
