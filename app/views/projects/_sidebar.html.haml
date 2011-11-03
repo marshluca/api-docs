@@ -10,7 +10,14 @@
     %p.summary 添加一个新的分类
     %p
       = link_to '新建分类', projects_path, :class => 'btn success'
-- else 
+
   .box
-    %h2 记事本是什么?
-    %p.summary 这是一个基于云存储的网络记事本，你可以放心的把你的一些文本资料存放在此处。
+    %h2 增加接口文档
+    %p.summary 添加一个新的接口文档
+    %p
+      = link_to '新建接口', projects_path, :class => 'btn success'
+
+- else
+  .box
+    %h2 关于API Docs
+    %p.summary 这是一个文档系统, 您可以快速,方便地查阅各种接口的详细使用方法。
