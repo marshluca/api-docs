@@ -31,10 +31,10 @@ class Doc
 
   private
     def build_insert_log
-      user_logs.create :name => 'insert'
+      user_logs.create :name => 'insert', :desc => '新增了接口'
     end
 
     def build_update_log
-      user_logs.create :name => 'update'
+      user_logs.create :name => 'update', :desc => '修改了接口'
     end
 end
