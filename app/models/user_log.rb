@@ -9,5 +9,7 @@ class UserLog
   embeds_one :author                  # 操作用户
   referenced_in :doc, :index => true  # 关联doc
 
+  index 'author.name'
+
   validates_presence_of :name
 end
