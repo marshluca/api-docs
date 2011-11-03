@@ -19,19 +19,16 @@ gem "cancan", "~> 1.6.7"
 gem "haml", ">= 3.1.2"
 gem "cells", "~> 3.7.0"
 gem "kaminari", "~> 0.12.4"
-# gem "will_paginate", "~> 3.0.2"
-# gem "wice_grid", "~> 3.0.4"
 gem "gravtastic", "~> 3.2.6"
 gem "simple_form", "~> 1.5.2"
-# gem "formtastic", "~> 2.0.2"
 gem "has_scope", "~> 0.5.1"
 gem "inherited_resources", "~> 1.3.0"
 gem "settingslogic", "~> 2.0.6"
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
-  # gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
+  # gem 'coffee-rails', '~> 3.1.1'
 end
 
 if HOST_OS =~ /linux/i
@@ -60,7 +57,6 @@ group :development do
   gem "guard-rspec", ">= 0.4.3"
   gem "guard-cucumber", ">= 0.6.1"
   gem "rails-footnotes", ">= 3.7"
-  # gem 'bootstrap-generators'
 end
 
 gem "rspec-rails", ">= 2.6.1", :group => [:test, :development]
