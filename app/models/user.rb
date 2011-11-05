@@ -38,4 +38,8 @@ class User
       update_attributes :projects => projects.push(project).uniq
     end
   end
+
+  def docs
+    Project.where(:name.in => self.projects).collect { |p| p.docs }.flatten.uniq
+  end
 end
