@@ -9,5 +9,5 @@
         .pull-left.avatar= image_tag(log.author.gravatar_url)
         .right_info
           .infos
-            .title #{log.author.name} #{log.desc}: #{link_to log.doc.name, project_doc_path(log.doc.project, log.doc)}
+            .title #{log.author.name} #{log.desc}: #{link_to log.doc.name, project_doc_path(log.doc.project_id, log.doc)}
             .info.time= log.created_at.to_s(:db)
