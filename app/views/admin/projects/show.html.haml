@@ -1,0 +1,18 @@
+%h2= @project.cname
+%p=  @project.desc
+%br/
+
+-# %h4 Name
+-# %p= @project.name
+
+-# %h4 Version
+-# %p= @project.version
+
+-# %h3= link_to '编辑', edit_admin_project_path(@project), :class => 'btn success'
+
+%h4 分类列表
+%ul
+  - @project.categories.each do |c|
+    %li= c.name
+
+%h3= link_to '增加分类', new_admin_project_category_path(@project), :class => 'btn success'

@@ -18,7 +18,9 @@ Wiki::Application.routes.draw do
 
     resources :users
     resources :docs
-    resources :projects
+    resources :projects do
+      resources :categories
+    end
   end
 
 

@@ -1,0 +1,18 @@
+%h3 #{@project.cname + @project.version + ' - 分类管理'}
+%br/
+
+%table
+  %tr
+    %th Name
+    %th Desc
+    %th
+
+  - @categories.each do |category|
+    %tr
+      %td= category.name
+      %td= category.desc
+      %td #{link_to '编辑', edit_admin_project_category_path(@project, category)} | #{link_to '删除', admin_project_category_path(@project, category), :confirm => '你确定要删除吗 ?', :method => :delete}
+
+%br
+
+= link_to '新增分类', new_admin_project_category_path(@project), :class => 'btn success'

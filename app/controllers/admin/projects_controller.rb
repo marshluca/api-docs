@@ -2,7 +2,7 @@ class Admin::ProjectsController < Admin::ApplicationController
   # GET /admin/projects
   # GET /admin/projects.json
   def index
-    @projects = Project.all
+    @projects = Project.asc('name')
 
     respond_to do |format|
       format.html # index.html.erb

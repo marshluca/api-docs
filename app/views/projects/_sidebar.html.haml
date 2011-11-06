@@ -1,23 +1,3 @@
-- if ['show'].include? controller.action_name
-  .box
-    %h2 增加版本
-    %p.summary 添加一个新的版本
-    %p
-      = link_to '新建版本', projects_path, :class => 'btn success'
-
-  .box
-    %h2 增加分类
-    %p.summary 添加一个新的分类
-    %p
-      = link_to '新建分类', projects_path, :class => 'btn success'
-
-  .box
-    %h2 增加接口文档
-    %p.summary 添加一个新的接口文档
-    %p
-      = link_to '新建接口', projects_path, :class => 'btn success'
-
-- else
-  .box
-    %h2 关于API Docs
-    %p.summary 这是一个文档系统, 您可以快速,方便地查阅各种接口的详细使用方法。
+.box
+  %h2 关于API Docs
+  %p.summary 这是一个文档系统, 您可以快速,方便地查阅各种接口的详细使用方法。

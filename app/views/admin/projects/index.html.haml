@@ -10,11 +10,11 @@
 
   - @projects.each do |project|
     %tr
-      %td= link_to project.cname, project_path(project)
+      %td= link_to project.cname, project
       %td= project.name
       %td= project.version
       %td= project.desc
-      %td  #{link_to '编辑', edit_admin_project_path(project)} | #{link_to '删除', project, :confirm => '你确定删除吗?', :method => :delete}
+      %td  #{link_to '编辑', edit_admin_project_path(project)} | #{link_to '分类管理', admin_project_categories_path(project)} | #{link_to '删除', project, :confirm => '你确定删除吗?', :method => :delete}
 
 %br
 
