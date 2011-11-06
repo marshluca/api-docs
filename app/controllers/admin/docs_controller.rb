@@ -40,6 +40,7 @@ class Admin::DocsController < Admin::ApplicationController
   # POST /admin/docs
   # POST /admin/docs.json
   def create
+    params[:doc][:format] = params[:doc][:format].split(', ')
     @doc = Doc.new(params[:doc])
 
     respond_to do |format|
