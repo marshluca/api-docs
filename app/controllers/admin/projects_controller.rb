@@ -45,7 +45,7 @@ class Admin::ProjectsController < Admin::ApplicationController
     respond_to do |format|
       if @project.save
         current_user.add_project(@project.name)
-        format.html { redirect_to @project, :notice => 'Project was successfully created.' }
+        format.html { redirect_to admin_projects_url, :notice => 'Project was successfully created.' }
         format.json { render :json => @project, :status => :created, :location => @project }
       else
         format.html { render :action => "new" }
@@ -61,7 +61,7 @@ class Admin::ProjectsController < Admin::ApplicationController
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        format.html { redirect_to @project, :notice => 'Project was successfully updated.' }
+        format.html { redirect_to admin_projects_url, :notice => 'Project was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

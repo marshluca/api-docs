@@ -2,9 +2,9 @@
 
 %table
   %tr
-    %th Name
-    %th Type
-    %th Desc
+    %th 名称
+    %th 类型
+    %th 描述
     %th
 
   - @parameters.each do |parameter|
@@ -16,4 +16,4 @@
 
 %br
 
-= link_to 'New Parameter', new_admin_project_doc_parameter_path(@project, @doc), :class => 'btn success'
+= link_to '新增参数', new_admin_project_doc_parameter_path(@project, @doc), :class => 'btn success'
