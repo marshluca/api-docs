@@ -17,9 +17,11 @@ Wiki::Application.routes.draw do
     root :to => "home#index"
 
     resources :users
-    resources :docs
     resources :projects do
       resources :categories
+      resources :docs do
+        resources :parameters
+      end
     end
   end
 
