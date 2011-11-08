@@ -85,6 +85,12 @@ class Admin::DocsController < Admin::ApplicationController
     end
   end
 
+  def category
+    @docs = @project.docs.where(:category => params[:cate]).asc('created_at').page(params[:page]).per(params[:per])
+
+    render :index
+  end
+
   private
     def find_project
       @project = Project.find(params[:project_id])

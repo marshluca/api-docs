@@ -22,7 +22,7 @@
     <div class="clearfix">
       <%= f.label :method %>
       <div class="input">
-      <%= f.text_field :http_method %></div>
+      <%= f.select :http_method, %w(Get Post).collect { |s| [s, s] } %></div>
     </div>
     <div class="clearfix">
       <%= f.label :format %>

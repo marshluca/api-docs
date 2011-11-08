@@ -20,6 +20,9 @@ Wiki::Application.routes.draw do
     resources :projects do
       resources :categories
       resources :docs do
+        collection do
+          get 'category/:cate' => 'docs#category'
+        end
         resources :parameters
       end
     end
