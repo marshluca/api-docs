@@ -72,4 +72,5 @@ end
 group :production do
   gem "memcached", "~> 1.3.5"
   gem "memcache-client", "~> 1.8.5"
+  gem "unicorn", "~> 4.1.1"
 end
