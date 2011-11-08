@@ -1,4 +1,4 @@
-%h3 #{@project.cname + @project.version + ' - 分类管理'}
+%h3 #{link_to @project.cname + @project.version, admin_project_docs_path(@project)} - 分类管理
 %br/
 
 %table
