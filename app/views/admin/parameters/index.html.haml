@@ -1,0 +1,19 @@
+%h2= @doc.name + '参数管理'
+
+%table
+  %tr
+    %th Name
+    %th Type
+    %th Desc
+    %th
+
+  - @parameters.each do |parameter|
+    %tr
+      %td= parameter.name
+      %td= parameter.type
+      %td= parameter.desc
+      %td #{link_to '编辑', edit_admin_project_doc_parameter_path(@project, @doc, parameter)} | #{link_to '删除', admin_project_doc_parameter_path(@project, @doc, parameter), :confirm => '你确定要删除吗 ?', :method => :delete}
+
+%br
+
+= link_to 'New Parameter', new_admin_project_doc_parameter_path(@project, @doc), :class => 'btn success'
