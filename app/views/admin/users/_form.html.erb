@@ -1,24 +1,14 @@
 <%= form_for([:admin, @user]) do |f| %>
   <fieldset>
-    <legend><%= @title %></legend>
+    <legend><%= link_to @user.name, @user %> - <%= @title %></legend>
     <%= render 'shared/error_messages', :target => @user %>
-    <div class="clearfix">
-      <%= f.label :name %>
-      <div class="input">
-      <%= f.text_field :name %></div>
-    </div>
-    <div class="clearfix">
-      <%= f.label :email %>
-      <div class="input">
-      <%= f.text_field :email %></div>
-    </div>
     <div class="clearfix">
       <%= f.label :projects %>
       <div class="input">
       <%= f.text_field :projects %></div>
     </div>
     <div class="clearfix">
-      <%= f.label :ability %>
+      <%= f.label :role %>
       <div class="input">
       <%= f.select :ability, User::ROLES.keys.collect { |s| [User::ROLES[s], s] } %></div>
     </div>

@@ -46,12 +46,12 @@ class Admin::DocsController < Admin::ApplicationController
     @doc = @project.docs.new(params[:doc])
 
     respond_to do |format|
-      if @@project.docs.save
-        format.html { redirect_to project_doc_url(@@project.docs.project, @doc), :notice => 'Doc was successfully created.' }
+      if @project.docs.save
+        format.html { redirect_to project_doc_url(@project.docs.project, @doc), :notice => 'Doc was successfully created.' }
         format.json { render :json => @doc, :status => :created, :location => @doc }
       else
         format.html { render :action => "new" }
-        format.json { render :json => @@project.docs.errors, :status => :unprocessable_entity }
+        format.json { render :json => @project.docs.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -63,12 +63,12 @@ class Admin::DocsController < Admin::ApplicationController
     @doc = @project.docs.find(params[:id])
 
     respond_to do |format|
-      if @@project.docs.update_attributes(params[:doc])
-        format.html { redirect_to project_doc_url(@@project.docs.project, @doc), :notice => 'Doc was successfully updated.' }
+      if @project.docs.update_attributes(params[:doc])
+        format.html { redirect_to project_doc_url(@project.docs.project, @doc), :notice => 'Doc was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
-        format.json { render :json => @@project.docs.errors, :status => :unprocessable_entity }
+        format.json { render :json => @project.docs.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -77,7 +77,7 @@ class Admin::DocsController < Admin::ApplicationController
   # DELETE /admin/docs/1.json
   def destroy
     @doc = @project.docs.find(params[:id])
-    @@project.docs.destroy
+    @project.docs.destroy
 
     respond_to do |format|
       format.html { redirect_to admin_docs_url }

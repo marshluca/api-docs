@@ -10,7 +10,7 @@
 
   - @users.each do |user|
     %tr
-      %td= user.name
+      %td= link_to user.name, user
       %td= user.email
       %td= user.role
       %td= user.projects.join(', ')
