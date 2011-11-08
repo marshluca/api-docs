@@ -1,5 +1,5 @@
 class Admin::HomeController < Admin::ApplicationController
   def index
-    @logs = UserLog.all
+    @logs = UserLog.desc('updated_at')
   end
 end

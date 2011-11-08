@@ -30,11 +30,11 @@ class Doc
   after_update :build_update_log
 
   private
-    def build_insert_log
-      user_logs.create :name => 'insert', :desc => '新增了接口'
+    def build_insert_log(user)
+      user_logs.create :name => 'insert', :desc => '新增了接口', :author => Author.new(:name => user.name, :email => user.email)
     end
 
-    def build_update_log
-      user_logs.create :name => 'update', :desc => '修改了接口'
+    def build_update_log(user)
+      user_logs.create :name => 'update', :desc => '修改了接口', :author => Author.new(:name => user.name, :email => user.email)
     end
 end
