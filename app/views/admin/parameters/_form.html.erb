@@ -1,6 +1,6 @@
 <%= form_for([:admin, @project, @doc, @parameter]) do |f| %>
   <fieldset>
-    <legend><%= @title %></legend>
+    <legend><%= link_to @project.cname + @project.version, admin_project_docs_path(@project) %> - <%= link_to @doc.name, admin_project_doc_path(@project, @doc) %> - <%= @title %></legend>
     <%= render 'shared/error_messages', :target => @parameter %>
     <div class="clearfix">
       <%= f.label :name %>

@@ -1,4 +1,4 @@
-%h2= @doc.name + '参数管理'
+%h3 #{link_to @project.cname + @project.version, admin_project_docs_path(@project)} - #{link_to @doc.name, project_doc_path(@project, @doc)} - 参数管理
 
 %table
   %tr
