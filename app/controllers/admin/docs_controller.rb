@@ -45,7 +45,7 @@ class Admin::DocsController < Admin::ApplicationController
     @doc = @project.docs.new(params[:doc])
 
     respond_to do |format|
-      if @project.docs.save
+      if @doc.save
         format.html { redirect_to project_doc_url(@project.docs.project, @doc), :notice => 'Doc was successfully created.' }
         format.json { render :json => @doc, :status => :created, :location => @doc }
       else
@@ -61,7 +61,7 @@ class Admin::DocsController < Admin::ApplicationController
     @doc = @project.docs.find(params[:id])
 
     respond_to do |format|
-      if @project.docs.update_attributes(params[:doc])
+      if @doc.update_attributes(params[:doc])
         format.html { redirect_to project_doc_url(@project.docs.project, @doc), :notice => 'Doc was successfully updated.' }
         format.json { head :ok }
       else
