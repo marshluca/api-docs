@@ -42,7 +42,6 @@ class Admin::DocsController < Admin::ApplicationController
   # POST /admin/docs
   # POST /admin/docs.json
   def create
-    params[:doc][:format] = params[:doc][:format].split(', ')
     @doc = @project.docs.new(params[:doc])
 
     respond_to do |format|
@@ -59,7 +58,6 @@ class Admin::DocsController < Admin::ApplicationController
   # PUT /admin/docs/1
   # PUT /admin/docs/1.json
   def update
-    params[:doc][:format] = params[:doc][:format].split(', ')
     @doc = @project.docs.find(params[:id])
 
     respond_to do |format|

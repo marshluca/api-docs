@@ -18,7 +18,7 @@
       %td= [doc.project.name, doc.project.version].join('-')
       %td= doc.category
       %td= doc.http_method
-      %td= doc.format.join(', ')
+      %td= doc.format
       %td= doc.authenticated.to_s
       %td  #{link_to '参数管理', admin_project_doc_parameters_path(@project, doc)} | #{link_to '编辑', edit_admin_project_doc_path(@project, doc)} | #{link_to '删除', project_doc_path(@project, doc), :confirm => '你确定要删除吗?', :method => :delete}
 

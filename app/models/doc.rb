@@ -11,7 +11,7 @@ class Doc
   field :http_method                                         # HTTP请求类型
   field :gist_url                                            # 返回示例 (嵌入gist)
   field :annotation                                          # 返回字段说明
-  field :format, :type => Array, :default => []              # 支持格式 [json|xml]
+  field :format                                              # 支持格式 [json|xml]
   field :kind, :type => Integer, :default => 0               # 类型 [doc]
   field :deprecated, :type => Boolean, :default => false     # 是否弃用
   field :authenticated, :type => Boolean, :default => false  # 是否需要登录认证 (默认不需要)
