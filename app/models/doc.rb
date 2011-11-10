@@ -26,8 +26,8 @@ class Doc
 
   validates :name, :presence => true #, :uniqueness => true
 
-  after_create :build_insert_log
-  after_update :build_update_log
+  # after_create :build_insert_log
+  # after_update :build_update_log
 
   private
     def build_insert_log(user)
