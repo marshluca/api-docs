@@ -1,6 +1,6 @@
 Wiki::Application.routes.draw do
 
-  root :to => "home#index"
+  root :to => "projects#index"
 
   devise_for :users
   resources :users, :only => [:index, :show]
@@ -14,7 +14,7 @@ Wiki::Application.routes.draw do
   end
 
   namespace :admin do
-    root :to => "home#index"
+    root :to => "projects#index"
 
     resources :users
     resources :projects do
