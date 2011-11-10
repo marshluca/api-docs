@@ -60,6 +60,7 @@ class Admin::UsersController < Admin::ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
+        @user.add_project(params[:user][:projects])
         format.html { redirect_to admin_users_url, :notice => 'User was successfully updated.' }
         format.json { head :ok }
       else
