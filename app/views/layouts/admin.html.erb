@@ -30,14 +30,16 @@
       </div>
     </div>
     <div class="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :class => "container alert-message #{name == :notice ? "success" : "error"}" %>
+      <% end %>
+    </div>
+    <div class="container">
       <div id="main" class="box">
-        <%#= notice_message %>
         <%= yield %>
       </div>
     </div>
     <footer class="footer">
-    <div class="container">
-    </div>
     </footer>
   </body>
 </html>

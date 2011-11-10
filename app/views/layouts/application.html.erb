@@ -49,13 +49,12 @@
       </div>
     </div>
     <div class="container">
-      <!-- <ul class="breadcrumb">
-        <li><a href="<%= root_path %>">Root</a> <span class="divider">/</span></li>
-        <%= yield :base_sitemap %>
-        <%= yield :sitemap %>
-      </ul> -->
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :class => "container alert-message #{name == :notice ? "success" : "error"}" %>
+      <% end %>
+    </div>
+    <div class="container">
       <div id="main" class="container-fluid">
-        <%#= notice_message %>
         <div class='sidebar'>
           <%= render 'sidebar' %>
         </div>
