@@ -26,6 +26,8 @@ class Doc
 
   validates :name, :presence => true #, :uniqueness => true
 
+  default_scope asc('updated_at')
+
   # after_create :build_insert_log
   # after_update :build_update_log
 
