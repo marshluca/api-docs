@@ -12,4 +12,6 @@ class UserLog
   index 'author.name'
 
   validates_presence_of :name
+
+  default_scope desc('updated_at')
 end
