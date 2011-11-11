@@ -1,6 +1,6 @@
 class UsersController < BaseController
   inherit_resources
-  actions :index, :show
+  actions :show
 
   def show
     @logs = UserLog.where('author.name' => current_user.name)
