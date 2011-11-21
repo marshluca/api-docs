@@ -33,6 +33,10 @@ class User
     ability > 0
   end
 
+  def master?
+    ability > 1
+  end
+
   def add_project(project)
     unless projects.include? project
       update_attributes :projects => projects.push(project).uniq
