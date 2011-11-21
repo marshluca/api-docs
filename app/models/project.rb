@@ -16,4 +16,12 @@ class Project
   index 'categories.name'
 
   validates_presence_of :name, :cname, :version
+
+  after_create :associate_with_owner
+
+  def associate_with_owner
+    User.where(:ability => 2).each do |u|
+      u.add_project self.name
+    end
+  end
 end
