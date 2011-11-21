@@ -6,7 +6,8 @@
     %th 邮箱
     %th 角色
     %th 项目
-    %th 操作
+    - if current_user.master?
+      %th 操作
 
   - @users.each do |user|
     %tr
@@ -14,6 +15,7 @@
       %td= user.email
       %td= user.role
       %td= user.projects.join(', ')
-      %td #{link_to '编辑', edit_admin_user_path(user)} | #{link_to '删除', user, :confirm => '你确定删除吗?', :method => :delete}
+      - if current_user.master?
+        %td #{link_to '编辑', edit_admin_user_path(user)} | #{link_to '删除', user, :confirm => '你确定删除吗?', :method => :delete}
 
 %br

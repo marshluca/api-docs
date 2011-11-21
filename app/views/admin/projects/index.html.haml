@@ -6,7 +6,8 @@
     %th 项目
     %th 版本
     %th 描述
-    %th
+    - if current_user.master?
+      %th
 
   - @projects.each do |project|
     %tr
@@ -14,7 +15,8 @@
       %td= project.name
       %td= project.version
       %td= project.desc
-      %td  #{link_to '分类管理', admin_project_categories_path(project)} | #{link_to '接口管理', admin_project_docs_path(project)} | #{link_to '编辑', edit_admin_project_path(project)} |  #{link_to '删除', admin_project_path(project), :confirm => '你确定删除吗?', :method => :delete}
+      - if current_user.master?
+        %td  #{link_to '分类管理', admin_project_categories_path(project)} | #{link_to '接口管理', admin_project_docs_path(project)} | #{link_to '编辑', edit_admin_project_path(project)} |  #{link_to '删除', admin_project_path(project), :confirm => '你确定删除吗?', :method => :delete}
 
 %br
 
