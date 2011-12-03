@@ -10,6 +10,7 @@
 # Mongoid.master.collections.reject { |c| c.name =~ /^system/}.each(&:drop)
 # puts 'SETTING UP DEFAULT USER LOGIN'
 
+__END__
 user = User.create! :name => 'admin', :email => 'admin@example.com', :password => 'secret', :password_confirmation => 'secret'
 puts 'New user created: ' << user.name
 
