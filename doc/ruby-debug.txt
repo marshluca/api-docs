@@ -1,2 +1,3 @@
 http://bashdb.sourceforge.net/ruby-debug.html
 http://cheat.errtheblog.com/s/rdebug/
+http://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-ruby-debug
