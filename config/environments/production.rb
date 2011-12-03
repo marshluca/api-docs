@@ -35,6 +35,9 @@ Wiki::Application.configure do
 
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
+  # config.logger = Logger.new(STDOUT) if $0 = "irb"
+  # rotate the log files every 5 megabytes and leave only the three most recent log files.
+  # config.logger = Logger.new(Rails.root.join("log", Rails.env + ".log"), 3, 5*1024*1024)
 
   # Use a different cache store in production
   config.cache_store = :mem_cache_store

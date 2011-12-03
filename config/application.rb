@@ -24,11 +24,14 @@ module Wiki
     config.generators do |g|
       g.view_specs false
       g.helper_specs false
+      # g.orm :active_record
+      # g.test_framework :test_unit
     end
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    # you can control the load order by naming
 
     # After-initializers
     config.after_initialize do
@@ -37,6 +40,9 @@ module Wiki
         Readline.try(:vi_editing_mode) rescue nil
       end
     end
+
+    # use middleware
+    # config.middleware.use Magical::Unicorns
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
