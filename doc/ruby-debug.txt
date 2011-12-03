@@ -1,0 +1,2 @@
+http://bashdb.sourceforge.net/ruby-debug.html
+http://cheat.errtheblog.com/s/rdebug/
