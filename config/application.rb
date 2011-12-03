@@ -1,3 +1,4 @@
+# run some code here before Rails itself is loaded
 require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
@@ -28,6 +29,14 @@ module Wiki
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # After-initializers
+    config.after_initialize do
+      # Enable vi editing mode for console
+      if RUBY_PLATFORM =~ /darwin/i
+        Readline.try(:vi_editing_mode) rescue nil
+      end
+    end
 
     # Custom directories with classes and modules you want to be autoloadable.
     # config.autoload_paths += %W(#{config.root}/extras)
