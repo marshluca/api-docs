@@ -1,0 +1,2 @@
+http://blog.teksol.info/2007/06/13/how-to-set-logger-options-in-rails
+http://railsillustrated.com/logger-tricks.html
