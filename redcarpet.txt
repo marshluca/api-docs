@@ -1,0 +1,3 @@
+https://github.com/tanoku/redcarpet
+http://railscasts.com/episodes/272-markdown-with-redcarpet
+http://rubydoc.info/github/tanoku/redcarpet/master/file/README.markdown
