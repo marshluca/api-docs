@@ -33,6 +33,4 @@
   %br/
 
   %h4 使用示例
-  %p= highlight('You searched for: rails', ['for', 'rails'], :highlighter => '<em>\1</em>')
-  -# %p= simple_format @doc.to_json
-  -# <script src="#{@doc.gist_url}"></script>
+  %p= markdown(@doc.annotation)

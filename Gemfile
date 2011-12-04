@@ -9,8 +9,8 @@ gem 'jquery-rails'
 
 gem "bson_ext", ">= 1.4.0"
 gem "mongoid", ">= 2.3.0"
-# gem "mongoid-eager-loading", "~> 0.3.1"
 gem "mongo-rails-instrumentation", "~> 0.2.4"
+# gem "mongoid-eager-loading", "~> 0.3.1"
 
 gem "frontend-helpers"
 gem "devise", ">= 1.4.7"
