@@ -35,16 +35,15 @@
       <%= f.text_field :url %></div>
     </div>
     <div class="clearfix">
-      <%= f.label :sample %>
+      <%= f.label :desc %>
       <div class="input">
-        <%= f.text_field :gist_url %>
-        (嵌入gist)
+        <%= f.text_area :desc, :class => "xxlarge", :style => "height:50px;" %>
       </div>
     </div>
     <div class="clearfix">
-      <%= f.label :desc %>
+      <%= f.label :sample %>
       <div class="input">
-        <%= f.text_area :desc, :class => "xxlarge", :style => "height:80px;" %>
+        <%= f.text_area :annotation, :class => "xxlarge", :style => "height:300px;" %>
       </div>
     </div>
     <div class="clearfix">
