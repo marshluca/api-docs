@@ -24,7 +24,7 @@ class User
   validates_uniqueness_of :name, :email, :case_sensitive => false
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
-  ROLES = { 0 => 'visitor', 1 => 'admin', 2 => 'master'}
+  ROLES = { 0 => 'visitor', 1 => 'admin', 2 => 'master' }
   def role
     ROLES[ability]
   end

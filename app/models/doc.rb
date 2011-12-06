@@ -18,6 +18,7 @@ class Doc
 
   embeds_one :author                                         # 创建作者
   embeds_many :parameters                                    # 请求参数
+  embeds_many :comments                                      # 评论列表
   references_many :user_logs                                 # 关联日志
   referenced_in :project, :index => true                     # 关联项目
 
