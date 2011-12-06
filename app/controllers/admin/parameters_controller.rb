@@ -47,7 +47,7 @@ class Admin::ParametersController < Admin::ApplicationController
 
     respond_to do |format|
       if @parameter.save
-        format.html { redirect_to admin_project_docs_url(@project), :notice => 'Parameter was successfully created.' }
+        format.html { redirect_to admin_project_doc_parameters_url(@project, @doc), :notice => 'Parameter was successfully created.' }
         format.json { render :json => @parameter, :status => :created, :location => @parameter }
       else
         format.html { render :action => "new" }
@@ -63,7 +63,7 @@ class Admin::ParametersController < Admin::ApplicationController
 
     respond_to do |format|
       if @parameter.update_attributes(params[:parameter])
-        format.html { redirect_to admin_project_docs_url(@project), :notice => 'Parameter was successfully updated.' }
+        format.html { redirect_to admin_project_doc_parameters_url(@project, @doc), :notice => 'Parameter was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
