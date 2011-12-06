@@ -46,7 +46,7 @@ class Admin::DocsController < Admin::ApplicationController
 
     respond_to do |format|
       if @doc.save
-        format.html { redirect_to admin_project_docs_url(@project), :notice => 'Doc was successfully created.' }
+        format.html { redirect_to project_doc_url(@project, @doc), :notice => 'Doc was successfully created.' }
         format.json { render :json => @doc, :status => :created, :location => @doc }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class Admin::DocsController < Admin::ApplicationController
 
     respond_to do |format|
       if @doc.update_attributes(params[:doc])
-        format.html { redirect_to admin_project_docs_url(@project), :notice => 'Doc was successfully updated.' }
+        format.html { redirect_to project_doc_url(@project, @doc), :notice => 'Doc was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
