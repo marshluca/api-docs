@@ -22,7 +22,7 @@ gem "simple_form", "~> 1.5.2"
 gem "has_scope", "~> 0.5.1"
 gem "inherited_resources", "~> 1.3.0"
 gem "settingslogic", "~> 2.0.6"
-gem "redcarpet", "~> 1.17.2"
+gem "redcarpet", "~> 2.0.0"
 gem "albino", "~> 1.3.3"
 gem "nokogiri", "~> 1.5.0"
 
