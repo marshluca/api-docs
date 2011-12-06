@@ -12,4 +12,10 @@ module DocsHelper
     end
     doc.to_s
   end
+
+  def edit_doc_link(project, doc)
+    if current_user.master?
+      link_to '[编辑]', edit_admin_project_doc_path(project, doc), :style => 'float:right; font-size:14px'
+    end
+  end
 end

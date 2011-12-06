@@ -1,5 +1,5 @@
 .box
-  %h3= @doc.name
+  %h3 #{@doc.name} #{edit_doc_link(@project, @doc)}
   %p= @doc.desc
   %br/
 
