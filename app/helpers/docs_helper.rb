@@ -18,4 +18,10 @@ module DocsHelper
       link_to '[编辑]', edit_admin_project_doc_path(project, doc), :style => 'float:right; font-size:14px'
     end
   end
+
+  def manage_parameters_link(project, doc)
+    if current_user.master?
+      link_to '[参数管理]', admin_project_doc_parameters_path(project, doc), :style => 'float:right; font-size:14px'
+    end
+  end
 end
