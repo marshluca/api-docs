@@ -46,4 +46,8 @@ class User
   def docs
     Project.where(:name.in => self.projects).collect { |p| p.docs }.flatten.uniq
   end
+
+  def to_author
+    Author.new(:name => self.name, :email => self.email)
+  end
 end
