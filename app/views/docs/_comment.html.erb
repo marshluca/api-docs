@@ -1,0 +1,10 @@
+<%= form_for(Comment.new) do |f| %>
+  <%= f.hidden_field :doc_id, :value => @doc.id %>
+  <div class="clearfix">
+    <%= f.text_area :content, :class => "long", :rows => "5" %>
+  </div>
+  <div class="buttons">
+    <%= f.submit "提交", :class => "btn primary" %>
+    <span class="help-inline">(输入不能为空)</span>
+  </div>
+<% end %>
