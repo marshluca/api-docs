@@ -37,7 +37,14 @@
 
 .box
   %h4 评论
-  - @doc.comments.each do |comment|
-    %p= comment.content
+  .topics
+    - @doc.comments.each do |comment|
+      - if comment.author
+        .topic.topic_line
+          .pull-left.avatar= image_tag(comment.author.gravatar_url)
+          .right_info
+            .infos
+              .title #{comment.author.name}: #{comment.content}
+              .info.time= comment.created_at.to_s(:db)
 
   = render 'comment'
