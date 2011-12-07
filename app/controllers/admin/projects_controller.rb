@@ -41,6 +41,7 @@ class Admin::ProjectsController < Admin::ApplicationController
   # POST /admin/projects.json
   def create
     @project = Project.new(params[:project])
+    @project.author = current_user.to_author
 
     respond_to do |format|
       if @project.save

@@ -43,6 +43,7 @@ class Admin::DocsController < Admin::ApplicationController
   # POST /admin/docs.json
   def create
     @doc = @project.docs.new(params[:doc])
+    @doc.author = current_user.to_author
 
     respond_to do |format|
       if @doc.save

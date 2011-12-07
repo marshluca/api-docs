@@ -28,16 +28,4 @@ class Doc
   validates :name, :presence => true #, :uniqueness => true
 
   default_scope asc('updated_at')
-
-  # after_create :build_insert_log
-  # after_update :build_update_log
-
-  private
-    def build_insert_log(user)
-      user_logs.create :name => 'insert', :desc => '新增了接口', :author => Author.new(:name => user.name, :email => user.email)
-    end
-
-    def build_update_log(user)
-      user_logs.create :name => 'update', :desc => '修改了接口', :author => Author.new(:name => user.name, :email => user.email)
-    end
 end
