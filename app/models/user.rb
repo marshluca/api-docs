@@ -37,6 +37,10 @@ class User
     ability > 1
   end
 
+  def to_author
+    Author.new(:name => self.name, :email => self.email)
+  end
+
   def add_project(project)
     unless projects.include? project
       update_attributes :projects => projects.push(project).uniq
@@ -45,9 +49,5 @@ class User
 
   def docs
     Project.where(:name.in => self.projects).collect { |p| p.docs }.flatten.uniq
-  end
-
-  def to_author
-    Author.new(:name => self.name, :email => self.email)
   end
 end
