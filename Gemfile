@@ -50,6 +50,7 @@ group :development do
   end
 
   gem 'ruby-debug'
+  gem "rails_best_practices"
   gem "haml-rails", ">= 0.3.4"
   gem "guard", ">= 0.6.2"
   gem "guard-bundler", ">= 0.1.3"
