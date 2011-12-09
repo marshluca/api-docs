@@ -50,6 +50,7 @@ group :development do
   end
 
   gem 'ruby-debug'
+  gem "ripper" #, :platform => :mri_18
   gem "rails_best_practices"
   gem "haml-rails", ">= 0.3.4"
   gem "guard", ">= 0.6.2"
