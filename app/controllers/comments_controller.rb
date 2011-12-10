@@ -1,8 +1,7 @@
 class CommentsController < BaseController
   def create
     @doc = Doc.find(params[:comment][:doc_id])
-    @comment = Comment.new(params[:comment])
-    @comment.author = current_user.to_author
+    @comment = current_user.build_comment(params[:comment])
 
     respond_to do |format|
       if @doc.comments.push(@comment)

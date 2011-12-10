@@ -1,4 +1,6 @@
 class User
+    @comment = Comment.new(params[:comment])
+    @comment.author = current_user.to_author
   include Mongoid::Document
   include Mongoid::Timestamps
   include Gravtastic
@@ -45,6 +47,12 @@ class User
     unless projects.include? project
       update_attributes :projects => projects.push(project).uniq
     end
+  end
+
+  def build_comment(params={})
+    comment = Comment.new(params)
+    comment.author = self.to_author
+    comment
   end
 
   def docs

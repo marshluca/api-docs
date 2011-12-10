@@ -11,6 +11,7 @@
 # bundler state
 /.bundle
 /vendor/bundle/
+rails_best_practices_output.html
 
 # minimal Rails specific artifacts
 db/*.sqlite3

@@ -4,7 +4,7 @@ Wiki::Application.routes.draw do
 
   devise_for :users
   resources :users, :only => [:index, :show]
-  resources :comments
+  resources :comments, :only => [:create]
 
   resources :projects, :only => [:index, :show] do
     resources :docs, :only => [:index, :show] do
