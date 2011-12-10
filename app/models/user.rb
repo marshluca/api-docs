@@ -1,6 +1,4 @@
 class User
-    @comment = Comment.new(params[:comment])
-    @comment.author = current_user.to_author
   include Mongoid::Document
   include Mongoid::Timestamps
   include Gravtastic
