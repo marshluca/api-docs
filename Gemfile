@@ -50,8 +50,6 @@ group :development do
   end
 
   gem 'ruby-debug'
-  gem "ripper" #, :platform => :mri_18
-  gem "rails_best_practices"
   gem "haml-rails", ">= 0.3.4"
   gem "guard", ">= 0.6.2"
   gem "guard-bundler", ">= 0.1.3"
@@ -60,6 +58,8 @@ group :development do
   gem "guard-rspec", ">= 0.4.3"
   gem "guard-cucumber", ">= 0.6.1"
   gem "rails-footnotes", ">= 3.7"
+  gem "ripper", "~> 1.0.5"
+  gem "rails_best_practices", "~> 1.5.3"
 end
 
 gem "rspec-rails", ">= 2.6.1", :group => [:test, :development]
