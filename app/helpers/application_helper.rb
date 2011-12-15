@@ -5,6 +5,7 @@ module ApplicationHelper
     begin
       JSON.parse(string).pretty_inspect
     rescue => e
+      Rails.logger.info [e, e.backtrace].flatten.join("\n")
       string
     end
   end
