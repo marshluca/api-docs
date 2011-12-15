@@ -2,7 +2,8 @@ module DocsHelper
   def markdown(text)
     renderer = Redcarpet::Render::HTML.new(:no_links => true, :hard_wrap => true)
     md = Redcarpet::Markdown.new(renderer, :autolink => true, :space_after_headers => true, :fenced_code_blocks => true)
-    syntax_highlighter(md.render(text.to_s)).html_safe
+    # str = JSON.parse(text).to_s.pretty_inspect
+    syntax_highlighter(md.render(str)).html_safe
   end
 
   def syntax_highlighter(html)
