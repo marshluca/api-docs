@@ -5,7 +5,7 @@
         .pull-left.avatar= image_tag(comment.author.gravatar_url)
         .right_info
           .infos
-            .title #{comment.author.name}: #{comment.content}
+            .title #{comment.author.name}: #{json_pretty_inspect(comment.content)}
             .info.time= comment.created_at.to_s(:db)
 
 = form_for(Comment.new) do |f|
