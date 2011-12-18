@@ -4,6 +4,5 @@ class ProjectsController < BaseController
 
   def index
     @projects = Project.where :name.in => current_user.projects
-    Notifications.welcome(current_user).deliver
   end
 end
